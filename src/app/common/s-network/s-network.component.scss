@@ -1,0 +1,26 @@
+.s-network {
+  &__row {
+
+  }
+
+  &__item {
+    display: inline-block;
+    vertical-align: middle;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: contain;
+
+    &--inst {
+      width: 24px;
+      height: 24px;
+    }
+    &--vk {
+      width: 30px;
+      height: 20px;
+    }
+    &--tw {
+
+    }
+  }
+
+}

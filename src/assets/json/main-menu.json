@@ -1,0 +1,32 @@
+[
+  {
+    "name": "Наши торты",
+    "alias": "main-page-catalog",
+    "show-header": true
+  },
+  {
+    "name": "Индивидуальный заказ",
+    "alias": "main-page-order",
+    "show-header": true
+  },
+  {
+    "name": "Отзывы",
+    "alias": "main-page-feedbacks",
+    "show-header": true
+  },
+  {
+    "name": "О нас",
+    "alias": "main-page-about",
+    "show-header": true
+  },
+  {
+    "name": "Как заказать",
+    "alias": "main-page-order-rules",
+    "show-header": true
+  },
+  {
+    "name": "Контакты",
+    "alias": "main-page-contacts",
+    "show-header": true
+  }
+]

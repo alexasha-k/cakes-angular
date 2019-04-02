@@ -1,0 +1,60 @@
+import { Injectable } from '@angular/core';
+import { HttpClient } from '@angular/common/http';
+
+import { Observable, of } from 'rxjs';
+
+export interface MainNav {
+  name: string;
+  alias: string;
+  showHeader: boolean;
+}
+
+export interface СatalogGroups {
+  name: string;
+  nameRus: string;
+  groupImage: GroupImage;
+  quantity: number;
+}
+
+export interface GroupImage {
+  title: string;
+  path: string;
+}
+
+export interface CakeFillings {
+  name: string;
+  nameRus: string;
+  description: string;
+  imageUrl: string;
+  price: number;
+  priceUnit: string;
+}
+
+@Injectable({
+  providedIn: 'root'
+})
+
+export class MainNavService {
+
+  constructor(private http: HttpClient) { }
+
+  mainNavUrl = 'api/mainNav';
+  getMainNav(): Observable<MainNav[]> {
+     return this.http.get<MainNav[]>(this.mainNavUrl);
+  }
+
+  phoneNumberUrl = 'api/phoneNumber';
+  getPhoneNumber(): Observable<string> {
+     return this.http.get<string>(this.phoneNumberUrl);
+  }
+
+  catalogGroupsUrl = 'api/catalogGroups';
+  getCatalogGroups(): Observable<СatalogGroups> {
+     return this.http.get<СatalogGroups>(this.catalogGroupsUrl);
+  }
+
+  cakeFillingsURL = 'api/cakeFillings';
+  getCakeFillings(): Observable<CakeFillings> {
+     return this.http.get<CakeFillings>(this.cakeFillingsURL);
+  }
+}

@@ -1,0 +1,31 @@
+<section class="catalog">
+  <div class="container">
+    <h2>Наши торты</h2>
+    <div class="catalog__row">
+      <div
+          *ngFor="let catalogGroup of catalogGroups | slice:0:3; index as i; first as isFirst"
+          class="catalog__card"
+          [ngStyle]="{'background-image': 'url('+catalogGroup.groupImage.path+')'}"
+          [class.catalog__card--big]="isFirst">
+        <div class="catalog__card-wrap">
+          <div class="catalog__card-name">{{catalogGroup.nameRus}}</div>
+          <div class="catalog__card-desc">{{ catalogGroup.quantity}} вида</div>
+        </div>
+        <a href="{{ catalogGroup.name }}" class="catalog__card-link">Смотреть</a>
+      </div>
+    </div>
+    <div class="catalog__row">
+      <div
+          *ngFor="let catalogGroup of catalogGroups | slice:3:6; index as i; first as isFirst"
+          class="catalog__card"
+          [ngStyle]="{'background-image': 'url('+catalogGroup.groupImage.path+')'}"
+          [class.catalog__card--big]="isFirst">
+        <div class="catalog__card-wrap">
+          <div class="catalog__card-name">{{ catalogGroup.nameRus }}</div>
+          <div class="catalog__card-desc">{{ catalogGroup.quantity }} вида</div>
+        </div>
+        <a href="{{ catalogGroup.name }}" class="catalog__card-link">Смотреть</a>
+      </div>
+    </div>
+  </div>
+</section>

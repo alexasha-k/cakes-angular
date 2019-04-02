@@ -1,0 +1,85 @@
+<section class="order">
+  <div class="container">
+    <h2 class="center">Индивидуальный заказ</h2>
+    <div class="subtitle center">Соберите торт в 3 шага</div>
+    <form class="order-form" id="order-form" action="#" method="post">
+      <div class="order-steps">
+        <div class="order-step">
+          <h4 class="order-step__name">Выберите <br>начинку</h4>
+          <div class="order-step__options">
+            <div
+                *ngFor="let cakeFilling of cakeFillings; first as isFirst"
+                class="order-step__option order-slide option-card option-card--h"
+                [class.order-slide--active]="isFirst">
+              <div class="option-card__image">
+                <img src="{{ cakeFilling.imageUrl }}" alt="{{ cakeFilling.nameRus }}">
+              </div>
+              <div class="option-card__desc-wrap">
+                <div class="option-card__name">{{ cakeFilling.nameRus }}</div>
+                <div class="option-card__desc">{{ cakeFilling.description }}</div>
+                <div class="option-card__price">{{ cakeFilling.price }} руб/{{ cakeFilling.priceUnit }}</div>
+                <label class="btn">
+                  Выбрать
+                  <input class="visually-hidden" type="checkbox" name="cake-filling" value="shocolade">
+                </label>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="order-step">
+          <h4 class="order-step__name">Размер</h4>
+            <div class="order-step__options">
+              <div class="order-step__option option-item">
+                <div class="option-item__image">
+                  <label>
+                    <img src="#" alt="">
+                    <div class="option-item__val">1кг</div>
+                    <input class="visually-hidden" type="radio" name="cake-size" value="1kg">
+                  </label>
+                </div>
+                <div class="option-item__desc">
+                  17-18 см<br> (1 кг – 6 персон)
+                </div>
+              </div>
+            </div>
+        </div>
+        <div class="order-step">
+          <h4 class="order-step__name">Оформление</h4>
+            <div class="order-step__options">
+              <div class="order-step__option option-card">
+                <div class="option-card__image"></div>
+                <div class="option-card__desc">
+                  <div class="option-card__name">Ягодное ассорти</div>
+                  <div class="option-card__price">700 руб/кг</div>
+                  <label>
+                    <span class="visually-hidden">Выбрать</span>
+                    <input class="visually-hidden" type="checkbox" name="cake-filling" value="shocolade2">
+                  </label>
+                </div>
+              </div>
+            </div>
+            <h3>Ваш выбор</h3>
+            <div class="order-submit">
+              <div class="order-submit__row">
+                <div class="order-submit__item">
+                  <div class="order-submit__title">Начинка</div>
+                  <div class="order-submit__desc">Шоколадный ганаш</div>
+                </div>
+                <div class="order-submit__item">
+                  <div class="order-submit__title">Начинка</div>
+                  <div class="order-submit__desc">Шоколадный ганаш</div>
+                </div>
+                <div class="order-submit__item">
+                  <div class="order-submit__title">Начинка</div>
+                  <div class="order-submit__desc">Шоколадный ганаш</div>
+                </div>
+                <div class="order-submit__item">
+                  <button class="btn" type="submit" name="order-form-submit">Заказать торт</button>
+                </div>
+              </div>
+            </div>
+        </div>
+      </div>
+    </form>
+  </div>
+</section>
