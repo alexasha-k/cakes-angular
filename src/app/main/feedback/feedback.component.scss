@@ -1,4 +1,5 @@
 .feedback {
+  margin-bottom: 100px;
   &__row {
     max-width: 730px;
     margin-left: auto;
@@ -9,7 +10,7 @@
     align-items: center;
   }
   &__image {
-    width: 220px;
+    min-width: 220px;
     height: 220px;
     border-radius: 50%;
     overflow: hidden;

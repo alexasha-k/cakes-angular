@@ -5,61 +5,78 @@
     <form class="order-form" id="order-form" action="#" method="post">
       <div class="order-steps">
         <div class="order-step">
-          <h4 class="order-step__name">Choose <br>filling</h4>
+          <h4 class="order-step__name">Filling</h4>
           <div class="order-step__options">
-            <div
-                *ngFor="let cakeFilling of cakeFillings; first as isFirst"
-                class="order-step__option order-slide option-card option-card--h"
-                [class.order-slide--active]="isFirst">
-              <div class="option-card__image">
-                <img src="{{ cakeFilling.imageUrl }}" alt="{{ cakeFilling.nameRus }}">
-              </div>
-              <div class="option-card__desc-wrap">
-                <div class="option-card__name">{{ cakeFilling.nameRus }}</div>
-                <div class="option-card__desc">{{ cakeFilling.description }}</div>
-                <div class="option-card__price">{{ cakeFilling.price }} $/{{ cakeFilling.priceUnit }}</div>
-                <label class="btn">
-                  Choose
-                  <input class="visually-hidden" type="checkbox" name="cake-filling" value="shocolade">
-                </label>
+            <div class="order-slider">
+              <div class="order-slider__arrow order-slider__arrow--left">Left</div>
+              <div class="order-slider__arrow order-slider__arrow--right">Right</div>
+              <div
+                  *ngFor="let cakeFilling of cakeFillings; first as isFirst"
+                  class="order-step__option order-slide option-card option-card--h"
+                  [class.order-slide--active]="isFirst">
+                <div class="option-card__image">
+                  <img src="{{ cakeFilling.imageUrl }}" alt="{{ cakeFilling.nameRus }}">
+                </div>
+                <div class="option-card__desc-wrap">
+                  <div class="option-card__name">{{ cakeFilling.nameRus }}</div>
+                  <div class="option-card__desc">{{ cakeFilling.description }}</div>
+                  <div class="option-card__price">{{ cakeFilling.price }} $/{{ cakeFilling.priceUnit }}</div>
+                  <label class="btn">
+                    Choose
+                    <input class="visually-hidden" type="checkbox" name="cake-filling" value="shocolade">
+                  </label>
+                </div>
               </div>
             </div>
           </div>
         </div>
         <div class="order-step">
-          <h4 class="order-step__name">Choose size</h4>
-            <div class="order-step__options">
-              <div class="order-step__option option-item">
+          <h4 class="order-step__name">Size</h4>
+            <div class="order-step__options order-step__options--size">
+              <div
+                *ngFor="let cakeSize of cakeSizes"
+                class="order-step__option option-item">
                 <div class="option-item__image">
                   <label>
-                    <img src="#" alt="">
-                    <div class="option-item__val">1kg</div>
-                    <input class="visually-hidden" type="radio" name="cake-size" value="1kg">
+                    <img src="{{ cakeSize.imageUrl }}" alt="">
+                    <div class="option-item__val">{{ cakeSize.size }}kg</div>
+                    <input class="visually-hidden" type="radio" name="cake-size" value="{{ cakeSize.size }}kg">
                   </label>
                 </div>
                 <div class="option-item__desc">
-                  17-18cm<br> (1 кг – 6 персон)
+                  {{ cakeSize.diameter }}<br>{{ cakeSize.persons }}
                 </div>
               </div>
             </div>
         </div>
         <div class="order-step">
-          <h4 class="order-step__name">Choose decoration</h4>
+          <h4 class="order-step__name">Decorating</h4>
             <div class="order-step__options">
-              <div class="order-step__option option-card">
-                <div class="option-card__image"></div>
-                <div class="option-card__desc">
-                  <div class="option-card__name">Ягодное ассорти</div>
-                  <div class="option-card__price">700 руб/кг</div>
-                  <label>
-                    <span class="visually-hidden">Choose</span>
-                    <input class="visually-hidden" type="checkbox" name="cake-filling" value="shocolade2">
-                  </label>
+              <div class="order-slider">
+                <div class="order-slider__arrow order-slider__arrow--left">Left</div>
+                <div class="order-slider__arrow order-slider__arrow--right">Right</div>
+                <div class="order-slider__wrapper">
+                  <div
+                    *ngFor="let cakeDecoratingItem of cakeDecorating; index as i"
+                    class="order-step__option order-step__option--decorating order-slide"
+                    [class.order-slide--active]="i < 2">
+                    <div class="option-card__image">
+                      <img src="{{ cakeDecoratingItem.imageUrl }}" alt="">
+                    </div>
+                    <div class="option-card__desc">
+                      <div class="option-card__name">{{ cakeDecoratingItem.nameRus }}</div>
+                      <div class="option-card__price">{{ cakeDecoratingItem.price }}$/{{ cakeDecoratingItem.priceUnit }}</div>
+                      <label>
+                        <span class="visually-hidden">Choose</span>
+                        <input class="visually-hidden" type="checkbox" name="cake-filling" value="{{ cakeDecoratingItem.name }}">
+                      </label>
+                    </div>
+                  </div>
                 </div>
               </div>
             </div>
-            <h3>Your choice</h3>
             <div class="order-submit">
+              <h3>Your choice</h3>
               <div class="order-submit__row">
                 <div class="order-submit__item">
                   <div class="order-submit__title">filling</div>

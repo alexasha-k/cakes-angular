@@ -9,8 +9,8 @@ export class MainBannerComponent implements OnInit {
 
   constructor() { }
 
-  title = 'Order special cakes';
-  subtitle = 'home bakery';
+  title = 'Speciality cake';
+  subtitle = 'home made';
 
   ngOnInit() {
   }

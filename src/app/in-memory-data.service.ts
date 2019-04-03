@@ -38,24 +38,24 @@ export class InMemoryDataService implements InMemoryDbService {
     ];
 
     const cakeFillings = [
-      { name: 'ganache', nameRus: 'Chocolate ganache', description: 'The most chocolate cake among other chocolate cakes!', imageUrl: 'assets/images/catalog-woman.png', price: 1000, priceUnit: 'kg'},
-      { name: 'vanilla-cream', nameRus: 'Vanilla cream', description: 'Nobody refuse the piece of this aroma cake', imageUrl: 'assets/images/catalog-woman.png', price: 1500, priceUnit: 'kg'},
-      { name: 'berry-cream', nameRus: 'Berry cream', description: 'Forest berries cream - the best filling ever!', imageUrl: 'assets/images/catalog-woman.png', price: 1500, priceUnit: 'kg'}
+      { name: 'ganache', nameRus: 'Chocolate ganache', description: 'The most chocolate cake among other chocolate cakes!', imageUrl: 'assets/images/filling1.png', price: 1000, priceUnit: 'kg'},
+      { name: 'vanilla-cream', nameRus: 'Vanilla cream', description: 'Nobody refuse the piece of this aroma cake', imageUrl: 'assets/images/filling1.png', price: 1500, priceUnit: 'kg'},
+      { name: 'berry-cream', nameRus: 'Berry cream', description: 'Forest berries cream - the best filling ever!', imageUrl: 'assets/images/filling1.png', price: 1500, priceUnit: 'kg'}
     ];
 
     const cakeSizes = [
-      { size: 1, diameter: '17-18cm', imageUrl: 'assets/images/catalog-woman.png', persons: '6 servings'},
-      { size: 2, diameter: '20-24cm', imageUrl: 'assets/images/catalog-woman.png', persons: '10-12 servings'},
-      { size: 5, diameter: '20-24cm, plus 16cm', imageUrl: 'assets/images/catalog-woman.png', persons: '20-30 servings'},
-      { size: 10, diameter: '3 levels', imageUrl: 'assets/images/catalog-woman.png', persons: '40-60 servings'}
+      { size: 1, diameter: '17-18cm', imageUrl: 'assets/images/cake-1kg.png', persons: '6 servings'},
+      { size: 2, diameter: '23-24cm', imageUrl: 'assets/images/cake-2kg.png', persons: '10-12 servings'},
+      { size: 5, diameter: '2 tiers 20 and 25cm', imageUrl: 'assets/images/cake-5kg.png', persons: '15-20 servings'},
+      { size: 8, diameter: '3 tiers, 30, 25, and 18cm', imageUrl: 'assets/images/cake-8kg.png', persons: '25-30 servings'}
     ];
 
-    const cakeDecoration = [
-      { name: 'berry-assorty', nameRus: 'Berry assorty', imageUrl: 'assets/images/catalog-woman.png', price: 700, priceUnit: 'kg'},
-      { name: 'marshmallow', nameRus: 'Marshmallow', imageUrl: 'assets/images/catalog-woman.png', price: 500, priceUnit: 'kg'},
-      { name: 'chocolate', nameRus: 'Chocolate', imageUrl: 'assets/images/catalog-woman.png', price: 500, priceUnit: 'kg'}
+    const cakeDecorating = [
+      { name: 'berry-assorty', nameRus: 'Berry assorty', imageUrl: 'assets/images/Decorating-1.png', price: 700, priceUnit: 'kg'},
+      { name: 'marshmallow', nameRus: 'Marshmallow', imageUrl: 'assets/images/Decorating-2.png', price: 500, priceUnit: 'kg'},
+      { name: 'chocolate', nameRus: 'Chocolate', imageUrl: 'assets/images/Decorating-1.png', price: 500, priceUnit: 'kg'}
     ];
 
-    return {mainNav, phoneNumber, sNetworkLinks, catalogGroups, cakeFillings, cakeSizes, cakeDecoration};
+    return {mainNav, phoneNumber, sNetworkLinks, catalogGroups, cakeFillings, cakeSizes, cakeDecorating};
   }
 }

@@ -12,12 +12,13 @@
     padding: 0 21px;
     margin: 0;
     a {
-      font-size: 13px;
+      font-size: 20px;
       line-height: 32px;
+      letter-spacing: -1px;
       color: $gray-dark;
       text-decoration: none;
       text-transform: uppercase;
-      font-weight: bold;
+      font-weight: 600;
       &:hover {
         color: $pink;
       }
@@ -28,7 +29,7 @@
 .phone-number {
   margin-left: auto;
   display: block;
-  font-size: 15px;
+  font-size: 20px;
   line-height: 32px;
   font-weight: bold;
   color: $gray-dark;

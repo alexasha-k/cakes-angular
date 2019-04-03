@@ -1,0 +1,35 @@
+.banner-advantages {
+
+  &__row {
+    display: flex;
+  }
+
+  &__item:not(:last-child) {
+    margin-right: 36px;
+  }
+
+  &__icon {
+    width: 55px;
+    height: 55px;
+    display: inline-block;
+    vertical-align: middle;
+    background-position: center;
+    background-repeat: no-repeat;
+    margin-right: 24px;
+  }
+
+  &__icon--eco {
+    background-image: url('/assets/images/icon-eco.png');
+  }
+
+  &__icon--gift {
+    background-image: url('/assets/images/icon-gift.png');
+  }
+
+  &__desc {
+    display: inline-block;
+    vertical-align: middle;
+    font-size: 22px;
+    line-height: 1.2;
+  }
+}

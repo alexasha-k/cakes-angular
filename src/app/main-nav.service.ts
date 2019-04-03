@@ -30,6 +30,21 @@ export interface CakeFillings {
   priceUnit: string;
 }
 
+export interface CakeSizes {
+  size: number;
+  diameter: string;
+  imageUrl: string;
+  persons: string;
+}
+
+export interface CakeDecorating {
+  name: string;
+  nameRus: string;
+  imageUrl: string;
+  price: number;
+  priceUnit: string;
+}
+
 @Injectable({
   providedIn: 'root'
 })
@@ -56,5 +71,15 @@ export class MainNavService {
   cakeFillingsURL = 'api/cakeFillings';
   getCakeFillings(): Observable<CakeFillings> {
      return this.http.get<CakeFillings>(this.cakeFillingsURL);
+  }
+
+  cakeSizesURL = 'api/cakeSizes';
+  getCakeSizes(): Observable<CakeSizes> {
+     return this.http.get<CakeSizes>(this.cakeSizesURL);
+  }
+
+  cakeDecoratingURL = 'api/cakeDecorating';
+  getCakeDecorating(): Observable<CakeDecorating> {
+     return this.http.get<CakeDecorating>(this.cakeDecoratingURL);
   }
 }

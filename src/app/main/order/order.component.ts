@@ -12,7 +12,7 @@ export class OrderComponent implements OnInit {
   constructor(private mainNavService: MainNavService) { }
 
   cakeFillings: CakeFillings[];
-  showCatalogGroups() {
+  showCakeFillings() {
     this.mainNavService.getCakeFillings()
       .subscribe(
         cakeFillings => this.cakeFillings = cakeFillings,
@@ -20,8 +20,28 @@ export class OrderComponent implements OnInit {
       );
   }
 
+  cakeSizes: CakeSizes[];
+  showCakeSizes() {
+    this.mainNavService.getCakeSizes()
+      .subscribe(
+        cakeSizes => this.cakeSizes = cakeSizes,
+        error => this.error = error
+      );
+  }
+
+  cakeDecorating: CakeDecorating[];
+  showCakeDecorating() {
+    this.mainNavService.getCakeDecorating()
+      .subscribe(
+        cakeDecorating => this.cakeDecorating = cakeDecorating,
+        error => this.error = error
+      );
+  }
+
   ngOnInit() {
-    this.showCatalogGroups();
+    this.showCakeFillings();
+    this.showCakeSizes();
+    this.showCakeDecorating();
   }
 
 }

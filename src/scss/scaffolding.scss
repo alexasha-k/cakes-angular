@@ -1,9 +1,9 @@
-@import url('https://fonts.googleapis.com/css?family=PT+Sans:400,700|Playfair+Display:400,700&subset=cyrillic');
+@import url('https://fonts.googleapis.com/css?family=Cookie|Open+Sans:400,600|Playfair+Display:700');
 
 body {
   margin: 0;
   padding: 0;
-  font-family: 'PT Sans', sans-serif;
+  font-family: 'Open Sans', sans-serif;
   color: $black;
   background-color: $pink-light;
 }
@@ -40,15 +40,19 @@ h2 {
 }
 
 .subtitle {
-  font-style: italic;
-  font-weight: bold;
-  font-size: 32px;
+  font-size: 36px;
   line-height: 42px;
+  font-family: 'Cookie', cursive;
+}
+
+.logo {
+  font-family: 'Cookie', cursive;
+  font-size: 42px;
 }
 
 h2 + .subtitle {
   margin-top: -60px;
-  margin-bottom: 50px;
+  margin-bottom: 36px;
 }
 
 .btn {
@@ -70,7 +74,7 @@ h2 + .subtitle {
   &:hover {
     color: $pink;
     background-color: $white;
-    box-shadow: 0 2px 10px 0 rgba(163, 6, 60, 0.1);
+    box-shadow: $pink-shadow;
     text-decoration: none;
   }
 
@@ -96,6 +100,12 @@ h2 + .subtitle {
   margin: -1px;
 }
 
+.clearfix::after {
+  content: '';
+  display: table;
+  clear: both;
+}
+
 .container {
   max-width: 1220px;
   padding: 0 15px;
@@ -103,8 +113,31 @@ h2 + .subtitle {
   margin-right: auto;
 }
 
+.offset-bottom {
+  margin-bottom: 60px;
+}
+
+.offset-top {
+  margin-top: 60px;
+}
+
+.image-right {
+  float: right;
+  margin-left: 80px;
+}
+
+.image-left {
+  float: left;
+  margin-right: 80px;
+}
+
 .bg.bg--red {
   background-color: $red;
+  padding: 110px 0 170px;
+  color: white;
+  h2,h3,h4 {
+    color: white;
+  }
 }
 
 .bg.bg--image {
@@ -114,10 +147,36 @@ h2 + .subtitle {
 
 .bg.bg--image-right {
   background-position: right center;
+  padding-right: 50%;
 }
 
 .bg.bg--image-left {
-  background-position: ledt center;
+  background-position: left center;
+  padding-left: 50%;
+}
+
+.order-slider {
+  position: relative;
+  padding: 0 105px;
+
+  &__arrow {
+    position: absolute;
+    top: 50%;
+    width: 60px;
+    height: 60px;
+    background-color: $pink-light;
+
+    &--right {
+      right: 0;
+    }
+
+    &--left {
+      left: 0;
+    }
+  }
+  &__wrapper {
+    display: flex;
+  }
 }
 
 .order-slide {

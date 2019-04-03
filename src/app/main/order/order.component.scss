@@ -1,0 +1,175 @@
+@import "../../../scss/variables";
+
+.order {
+  margin-bottom: 100px;
+  counter-reset: order-name;
+
+  .order-step {
+    background-color: $white;
+    box-shadow: 0 10px 13px 0 rgba(163,6,60,0.05);
+    margin-bottom: 35px;
+    padding: 90px 80px;
+    position: relative;
+
+    &::after {
+      content: '';
+      display: block;
+      clear: both;
+    }
+
+
+    &__name {
+      color: $pink;
+      font-size: 24px;
+      font-weight: 600;
+      position: absolute;
+      top: 70px;
+      left: 60px;
+      margin: 0;
+
+      &:before {
+        counter-increment: order-name;
+        content: '0' counter(order-name);
+        display: block;
+        font-size: 58px;
+      }
+    }
+
+    &__options {
+      padding-left: 120px;
+    }
+  }
+
+}
+
+.option-card {
+
+  align-items: center;
+
+  &.option-card--h {
+
+    .option-card__image {
+      width: 346px;
+
+      img {
+        background-color: $pink-light;
+      }
+    }
+
+    .option-card__desc-wrap {
+      padding-left: 44px;
+    }
+
+    .option-card__name {
+      font-size: 20px;
+      line-height: 36px;
+      font-weight: bold;
+    }
+
+    .option-card__desc {
+      font-size: 18px;
+      line-height: 24px;
+      margin-bottom: 24px;
+      max-width: 300px;
+    }
+
+    .option-card__price {
+      font-size: 22px;
+      line-height: 26px;
+      font-weight: bold;
+      margin-bottom: 46px;
+    }
+  }
+
+
+}
+
+.option-item {
+  &__image {
+    position: relative;
+    width: fit-content;
+    margin-bottom: 10px;
+    label {
+      cursor: pointer;
+    }
+    img {
+      padding: 20px;
+      border-radius: 50%;
+
+      &:hover {
+        box-shadow: $pink-shadow;
+      }
+    }
+  }
+  &__val {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+  }
+  &__desc {
+    text-align: center;
+  }
+}
+
+.order-step__options--size {
+  display: flex;
+  align-items: flex-end;
+  justify-content: space-between;
+}
+
+.order-step__option--decorating {
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-between;
+  box-shadow: $pink-shadow;
+  padding: 30px 20px;
+  margin-right: 40px;
+
+  .option-card {
+    &__image {
+      margin-bottom: 44px;
+    }
+    &__desc {
+      text-align: center;
+    }
+    &__name {
+      font-size: 20px;
+      line-height: 30px;
+    }
+    &__price {
+      font-size: 22px;
+      line-height: 30px;
+      font-weight: bold;
+    }
+  }
+}
+
+.order-submit {
+  margin-top: 60px;
+  h3 {
+    font-size: 27px;
+  }
+  &__row {
+    display: flex;
+    align-items: flex-end;
+  }
+  &__item {
+    &:not(:last-child) {
+      margin-right: 30px;
+      flex-grow: 1;
+    }
+  }
+  &__title {
+    color: $pink;
+    font-size: 27px;
+    line-height: 30px;
+    margin-bottom: 20px;
+    font-style: italic;
+  }
+  &__desc {
+    font-size: 18px;
+    line-height: 30px;
+    border-bottom: 1px solid #c1b0af;
+  }
+}
