@@ -1,3 +1,4 @@
+@import "../../../scss/variables";
 .s-network {
   &__row {
 
@@ -5,22 +6,25 @@
 
   &__item {
     display: inline-block;
+    width: 44px;
+    height: 44px;
     vertical-align: middle;
     background-position: center;
     background-repeat: no-repeat;
     background-size: contain;
+    margin-right: 16px;
+    padding: 10px;
+    border-radius: 10px;
+    background-color: white;
+    transition: 150ms ease;
+    &:last-child {
+      margin-right: 0;
+    }
+    &:hover {
+      background: $pink;
+      color: white;
+    }
 
-    &--inst {
-      width: 24px;
-      height: 24px;
-    }
-    &--vk {
-      width: 30px;
-      height: 20px;
-    }
-    &--tw {
-
-    }
   }
 
 }

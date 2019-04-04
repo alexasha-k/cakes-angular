@@ -38,6 +38,12 @@ export class OrderComponent implements OnInit {
       );
   }
 
+  cakeFillingsSelected: string = "Choose filling";
+  cakeSizesSelected: number = "Choose size";
+  cakeDecoratingSelected: string = "Choose decorating";
+
+
+
   ngOnInit() {
     this.showCakeFillings();
     this.showCakeSizes();

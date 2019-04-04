@@ -15,7 +15,13 @@
         grid-column: 2;
 
         .catalog__card-link {
-          color: $black;
+
+          .text {
+            opacity: 1;
+          }
+          &:hover {
+            color: $pink;
+          }
         }
       }
     }
@@ -62,14 +68,23 @@
   &__card-link {
     position: absolute;
     bottom: 40px;
-    right: 50px;
+    right: 40px;
     text-decoration: none;
     font-size: 20px;
-    color: transparent;
-    padding-right: 40px;
-    background-image: url('assets/images/arrow-right.png');
-    background-repeat: no-repeat;
-    background-position: right center;
-    background-size: auto;
+    color: $black;
+    transition: 150ms ease;
+
+    .text {
+      opacity: 0;
+      margin-right: 24px;
+    }
+
+    .mat-icon {
+      height: 20px;
+    }
+
+    &:hover {
+      color: $pink;
+    }
   }
 }

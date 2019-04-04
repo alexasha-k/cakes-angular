@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, Input } from '@angular/core';
 import { DomSanitizer } from '@angular/platform-browser';
 import { MatIconRegistry } from '@angular/material';
 
@@ -9,6 +9,8 @@ import { MatIconRegistry } from '@angular/material';
 })
 export class IconSvgComponent implements OnInit {
 
+  @Input() iconName: string;
+
   constructor(iconRegistry: MatIconRegistry, sanitizer: DomSanitizer) {
     iconRegistry.addSvgIcon(
       'gift',
@@ -16,7 +18,7 @@ export class IconSvgComponent implements OnInit {
     );
     iconRegistry.addSvgIcon(
       'instagram',
-      sanitizer.bypassSecurityTrustResourceUrl('/assets/icons/icon-instagram.svg')
+      sanitizer.bypassSecurityTrustResourceUrl('/assets/icons/icon-insta.svg')
     );
     iconRegistry.addSvgIcon(
       'leaf',
@@ -25,6 +27,14 @@ export class IconSvgComponent implements OnInit {
     iconRegistry.addSvgIcon(
       'vk',
       sanitizer.bypassSecurityTrustResourceUrl('/assets/icons/icon-vk.svg')
+    );
+    iconRegistry.addSvgIcon(
+      'icon-arrow-left',
+      sanitizer.bypassSecurityTrustResourceUrl('/assets/icons/icon-arrow-left.svg')
+    );
+    iconRegistry.addSvgIcon(
+      'icon-arrow-right',
+      sanitizer.bypassSecurityTrustResourceUrl('/assets/icons/icon-arrow-right.svg')
     );
   }
 

@@ -11,7 +11,9 @@
           <div class="catalog__card-name">{{catalogGroup.nameRus}}</div>
           <div class="catalog__card-desc">{{ catalogGroup.quantity}} types</div>
         </div>
-        <a href="{{ catalogGroup.name }}" class="catalog__card-link">See more</a>
+        <a href="{{ catalogGroup.name }}" class="catalog__card-link">See more
+          <app-icon-svg iconName="icon-arrow-right"></app-icon-svg>
+        </a>
       </div>
     </div>
     <div class="catalog__row">
@@ -24,7 +26,10 @@
           <div class="catalog__card-name">{{ catalogGroup.nameRus }}</div>
           <div class="catalog__card-desc">{{ catalogGroup.quantity }} types</div>
         </div>
-        <a href="{{ catalogGroup.name }}" class="catalog__card-link">See more</a>
+        <a href="{{ catalogGroup.name }}" class="catalog__card-link">
+          <span class="text">See more</span>
+          <span><app-icon-svg iconName="icon-arrow-right"></app-icon-svg></span>
+        </a>
       </div>
     </div>
   </div>

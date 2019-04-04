@@ -59,7 +59,8 @@
                   <div
                     *ngFor="let cakeDecoratingItem of cakeDecorating; index as i"
                     class="order-step__option order-step__option--decorating order-slide"
-                    [class.order-slide--active]="i < 2">
+                    [class.order-slide--active]="i < 2"
+                    [class.selected]="cakeDecoratingItem === cakeDecoratingSelected">
                     <div class="option-card__image">
                       <img src="{{ cakeDecoratingItem.imageUrl }}" alt="">
                     </div>
@@ -79,16 +80,16 @@
               <h3>Your choice</h3>
               <div class="order-submit__row">
                 <div class="order-submit__item">
-                  <div class="order-submit__title">filling</div>
-                  <div class="order-submit__desc">Chocolate ganache</div>
+                  <div class="order-submit__title">Filling</div>
+                  <div class="order-submit__desc">{{ cakeFillingsSelected }}</div>
                 </div>
                 <div class="order-submit__item">
                   <div class="order-submit__title">Size</div>
-                  <div class="order-submit__desc">2kg</div>
+                  <div class="order-submit__desc">{{ cakeSizesSelected }}</div>
                 </div>
                 <div class="order-submit__item">
                   <div class="order-submit__title">Decoration</div>
-                  <div class="order-submit__desc">Berry assorty</div>
+                  <div class="order-submit__desc">{{ cakeDecoratingSelected }}</div>
                 </div>
                 <div class="order-submit__item">
                   <button class="btn" type="submit" name="order-form-submit">Place order</button>
