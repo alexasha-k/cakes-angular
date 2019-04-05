@@ -17,6 +17,24 @@
       clear: both;
     }
 
+    &__option {
+      position: relative;
+
+      &.selected {
+
+        .order-step__selected {
+          opacity: 1;
+        }
+      }
+    }
+
+    &__selected {
+      position: absolute;
+      color: $pink;
+      top: -25px;
+      left: -25px;
+      opacity: 0;
+    }
 
     &__name {
       color: $pink;
@@ -109,6 +127,17 @@
   }
   &__desc {
     text-align: center;
+  }
+
+  &.selected {
+  img {
+        box-shadow: $pink-shadow;
+      }
+  }
+
+  .order-step__selected {
+    top: 0;
+    left: 0;
   }
 }
 

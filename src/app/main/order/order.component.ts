@@ -39,9 +39,20 @@ export class OrderComponent implements OnInit {
   }
 
   cakeFillingsSelected: string = "Choose filling";
-  cakeSizesSelected: number = "Choose size";
+  cakeSizesSelected: string = "Choose size";
   cakeDecoratingSelected: string = "Choose decorating";
 
+  setCakeFillings(cakeFillingsSelected): void {
+    this.cakeFillingsSelected = cakeFillingsSelected.nameRus;
+  }
+
+  setCakeSizes(cakeSizesSelected): void {
+    this.cakeSizesSelected = cakeSizesSelected.size + "kg";
+  }
+
+  setCakeDecoratings(cakeDecoratingSelected): void {
+    this.cakeDecoratingSelected = cakeDecoratingSelected.nameRus;
+  }
 
 
   ngOnInit() {

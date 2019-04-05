@@ -36,6 +36,10 @@ export class IconSvgComponent implements OnInit {
       'icon-arrow-right',
       sanitizer.bypassSecurityTrustResourceUrl('/assets/icons/icon-arrow-right.svg')
     );
+    iconRegistry.addSvgIcon(
+      'icon-check-mark',
+      sanitizer.bypassSecurityTrustResourceUrl('/assets/icons/icon-check-mark.svg')
+    );
   }
 
   ngOnInit() {
