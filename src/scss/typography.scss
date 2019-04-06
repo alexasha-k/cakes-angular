@@ -1,0 +1,90 @@
+h1, h2, h3 {
+  font-family: 'Playfair Display', serif;
+  color: $gray-dark;
+}
+
+h1 {
+  font-size: 78px;
+  line-height: 84px;
+}
+
+h2 {
+  font-size: 40px;
+  line-height: 60px;
+  margin-bottom: 60px;
+}
+
+.subtitle {
+  font-size: 36px;
+  line-height: 42px;
+  font-family: 'Cookie', cursive;
+}
+
+
+h2 + .subtitle {
+  margin-top: -60px;
+  margin-bottom: 36px;
+}
+
+.center {
+  text-align: center;
+}
+
+.offset-bottom {
+  margin-bottom: 60px;
+}
+
+.offset-top {
+  margin-top: 60px;
+}
+
+.image-right {
+  float: right;
+  margin-left: 80px;
+}
+
+.image-left {
+  float: left;
+  margin-right: 80px;
+}
+
+@media (max-width: 1199px) {
+  h1 {
+    font-size: 60px;
+    line-height: 72px;
+  }
+
+  h2 {
+    font-size: 28px;
+    line-height: 40px;
+    margin-bottom: 40px;
+  }
+
+  .subtitle {
+    font-size: 28px;
+    line-height: 32px;
+    font-family: 'Cookie', cursive;
+  }
+
+
+  h2 + .subtitle {
+    margin-top: -40px;
+    margin-bottom: 36px;
+  }
+
+  .offset-bottom {
+    margin-bottom: 40px;
+  }
+
+  .offset-top {
+    margin-top: 40px;
+  }
+
+  .image-right {
+    margin-left: 40px;
+  }
+
+  .image-left {
+    margin-right: 40px;
+  }
+}

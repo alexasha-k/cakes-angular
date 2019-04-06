@@ -14,11 +14,6 @@ body {
   box-sizing: border-box;
 }
 
-h1, h2, h3 {
-  font-family: 'Playfair Display', serif;
-  color: $gray-dark;
-}
-
 a {
   color: $pink;
 
@@ -30,27 +25,8 @@ a {
   }
 }
 
-h1 {
-  font-size: 78px;
-  line-height: 84px;
-}
-
-h2 {
-  font-size: 40px;
-  line-height: 60px;
-  margin-bottom: 60px;
-}
-
-.subtitle {
-  font-size: 36px;
-  line-height: 42px;
-  font-family: 'Cookie', cursive;
-}
-
-
-h2 + .subtitle {
-  margin-top: -60px;
-  margin-bottom: 36px;
+img {
+  max-width: 100%;
 }
 
 .btn {
@@ -86,10 +62,6 @@ h2 + .subtitle {
   }
 }
 
-.center {
-  text-align: center;
-}
-
 .visually-hidden {
   position: absolute;
   clip: rect(0 0 0 0);
@@ -109,24 +81,6 @@ h2 + .subtitle {
   padding: 0 15px;
   margin-left: auto;
   margin-right: auto;
-}
-
-.offset-bottom {
-  margin-bottom: 60px;
-}
-
-.offset-top {
-  margin-top: 60px;
-}
-
-.image-right {
-  float: right;
-  margin-left: 80px;
-}
-
-.image-left {
-  float: left;
-  margin-right: 80px;
 }
 
 .bg.bg--red {
@@ -188,4 +142,21 @@ h2 + .subtitle {
 .order-step__selected .mat-icon {
   width: 50px;
   height: 50px;
+}
+
+@media (max-width: 1199px) {
+  .bg.bg--image-left {
+    background-position: 120% center;
+    padding-left: 36%;
+  }
+}
+
+@media (max-width: 767px) {
+  .bg.bg--image-left {
+    background-position: center bottom;
+    background-size: contain;
+    padding-left: 0;
+    padding-top: 30px;
+    padding-bottom: 140px;
+  }
 }

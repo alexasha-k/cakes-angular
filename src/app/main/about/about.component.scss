@@ -18,3 +18,20 @@
     font-family: 'Times New Roman';
   }
 }
+
+@media (max-width: 1199px) {
+  .quote {
+    padding-top: 0;
+  }
+}
+
+@media (max-width: 767px) {
+  .quote {
+    blockquote {
+      margin: 20px 0 0;
+    }
+    &::before {
+      font-size: 100px;
+    }
+  }
+}

@@ -33,3 +33,21 @@
     line-height: 1.2;
   }
 }
+
+@media (max-width: 767px) {
+
+  .banner-advantages {
+    &__row {
+      flex-direction: column;
+    }
+
+    &__item {
+      margin-right: 0;
+      margin-bottom: 20px;
+    }
+    &__desc {
+      font-size: 16px;
+    }
+  }
+
+}

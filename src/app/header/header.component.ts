@@ -31,6 +31,12 @@ export class HeaderComponent implements OnInit {
       );
   }
 
+  isMainNavOpened: boolean = false;
+
+  mainNavToggle(): void {
+    this.isMainNavOpened = !this.isMainNavOpened;
+  }
+
 
   ngOnInit() {
     this.showMainNav();

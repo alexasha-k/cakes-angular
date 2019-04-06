@@ -1,1 +1,161 @@
 @import "../../../scss/variables";
+
+.catalog {
+  &__row {
+
+    display: grid;
+    grid-gap: 28px 40px;
+    grid-template-columns: 64fr 45fr;
+    &:not(:last-child) {
+      margin-bottom: 40px;
+    }
+
+    &:nth-child(odd) {
+      grid-template-columns: 45fr 65fr;
+
+      .catalog__card--big {
+        grid-column: 2;
+      }
+    }
+  }
+
+  &__card {
+    position: relative;
+    padding-top: 40%;
+    background-color: $white;
+    box-shadow: 0 10px 13px 0 rgba(163,6,60,0.05);
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: contain;
+
+    &:hover {
+      opacity: 0.9;
+    }
+  }
+
+  &__card--big {
+    padding-top: 80%;
+    grid-row: 1/3;
+
+    .catalog__card-link {
+
+      .text {
+        opacity: 1;
+      }
+      &:hover {
+        color: $pink;
+      }
+    }
+  }
+
+  &__card--right {
+
+  }
+
+  &__card-wrap {
+    position: absolute;
+    top: 40px;
+    left: 40px;
+  }
+
+  &__card-name {
+    font-size: 24px;
+  }
+
+  &__card-desc {
+    font-size: 20px;
+    opacity: 0.7;
+  }
+
+  &__card-link {
+    position: absolute;
+    bottom: 40px;
+    right: 40px;
+    text-decoration: none;
+    font-size: 20px;
+    color: $black;
+    transition: 150ms ease;
+
+    .text {
+      opacity: 0;
+      margin-right: 24px;
+    }
+
+    .mat-icon {
+      height: 20px;
+    }
+
+    &:hover {
+      color: $pink;
+    }
+  }
+}
+
+@media (max-width: 1199px) {
+
+  .catalog {
+    &__row {
+      grid-gap: 20px;
+
+      &:not(:last-child) {
+        margin-bottom: 20px;
+      }
+    }
+
+    &__card-wrap {
+      top: 24px;
+      left: 24px;
+    }
+
+    &__card-link {
+      bottom: 24px;
+      right: 24px;
+      font-size: 16px;
+
+      .text {
+        margin-right: 16px;
+      }
+    }
+
+    &__card-name {
+      font-size: 20px;
+      font-weight: 600;
+      text-shadow: -2px 2px 2px #fff;
+    }
+
+    &__card-desc {
+      font-size: 16px;
+    }
+  }
+}
+
+@media (max-width: 767px) {
+  .catalog {
+    &__row {
+      display: block;
+      margin-bottom: 12px;
+    }
+
+    &__card, &__card--big {
+      padding-top: 42%;
+      margin-bottom: 12px;
+    }
+
+    &__card-wrap {
+      top: 12px;
+      left: 12px;
+    }
+
+    &__card-link {
+      display: none;
+    }
+
+    &__card-name {
+      font-size: 18px;
+    }
+
+    &__card-desc {
+      font-size: 14px;
+    }
+  }
+}

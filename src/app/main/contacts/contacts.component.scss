@@ -26,3 +26,23 @@
     }
   }
 }
+
+@media (max-width: 767px) {
+
+  .contacts {
+    padding-bottom: 50px;
+    background-image: none !important;
+    &__row {
+      flex-direction: column;
+    }
+    &__col {
+      flex-basis: 100%;
+      padding-right: 0;
+    }
+    .form-field {
+      & + .btn {
+        margin-top: 20px;
+      }
+    }
+  }
+}

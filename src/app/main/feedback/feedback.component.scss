@@ -32,3 +32,15 @@
     line-height: 24px;
   }
 }
+
+@media (max-width: 767px) {
+  .feedback {
+    &__item {
+      flex-direction: column;
+      text-align: center;
+    }
+    &__desc {
+      margin-left: 0;
+    }
+  }
+}
