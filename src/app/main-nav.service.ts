@@ -68,6 +68,11 @@ export class MainNavService {
      return this.http.get<СatalogGroups>(this.catalogGroupsUrl);
   }
 
+  getCatalogGroup(id: number): Observable<СatalogGroups> {
+     const url = `${this.catalogGroupsUrl}/${id}`;
+     return this.http.get<СatalogGroups>(url);
+  }
+
   cakeFillingsURL = 'api/cakeFillings';
   getCakeFillings(): Observable<CakeFillings> {
      return this.http.get<CakeFillings>(this.cakeFillingsURL);

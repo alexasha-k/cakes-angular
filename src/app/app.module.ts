@@ -21,6 +21,8 @@ import { AdvantagesComponent } from './main/advantages/advantages.component';
 import { ContactsComponent } from './main/contacts/contacts.component';
 import { GalleryDirective } from './gallery.directive';
 import { IconSvgComponent } from './UI/icon-svg/icon-svg.component';
+import { AppRoutingModule } from './/app-routing.module';
+import { CatalogListComponent } from './catalog-list/catalog-list.component';
 
 @NgModule({
   declarations: [
@@ -38,7 +40,8 @@ import { IconSvgComponent } from './UI/icon-svg/icon-svg.component';
     AdvantagesComponent,
     ContactsComponent,
     GalleryDirective,
-    IconSvgComponent
+    IconSvgComponent,
+    CatalogListComponent
   ],
   imports: [
     MaterialModuleModule,
@@ -46,7 +49,8 @@ import { IconSvgComponent } from './UI/icon-svg/icon-svg.component';
     HttpClientModule,
     HttpClientInMemoryWebApiModule.forRoot(
       InMemoryDataService, { dataEncapsulation: false, passThruUnknownUrl: true }
-    )
+    ),
+    AppRoutingModule
   ],
   providers: [],
   bootstrap: [AppComponent]

@@ -29,12 +29,12 @@ export class InMemoryDataService implements InMemoryDbService {
     ];
 
     const catalogGroups = [
-      { name: 'classic', nameRus: 'Classic', groupImage: {title: 'Classic cakes', path: 'assets/images/catalog-classic.png'}, quantity: 24},
-      { name: 'mousse', nameRus: 'Mousse', groupImage: {title: 'Mousse cakes', path: 'assets/images/catalog-mousse.png'}, quantity: 12},
-      { name: 'wedding', nameRus: 'For wedding', groupImage: {title: 'Свадебные cakes', path: 'assets/images/catalog-wedding.png'}, quantity: 20},
-      { name: 'children', nameRus: 'For children', groupImage: {title: 'Cakes for children', path: 'assets/images/catalog-children.png'}, quantity: 16},
-      { name: 'man', nameRus: 'For men', groupImage: {title: 'Cakes for men', path: 'assets/images/catalog-man.png'}, quantity: 12},
-      { name: 'woman', nameRus: 'For women', groupImage: {title: 'Cakes for women', path: 'assets/images/catalog-woman.png'}, quantity: 16},
+      { id: 1, name: 'classic', nameRus: 'Classic', groupImage: {title: 'Classic cakes', path: 'assets/images/catalog-classic.png'}, quantity: 24},
+      { id: 2, name: 'mousse', nameRus: 'Mousse', groupImage: {title: 'Mousse cakes', path: 'assets/images/catalog-mousse.png'}, quantity: 12},
+      { id: 3, name: 'wedding', nameRus: 'For wedding', groupImage: {title: 'Свадебные cakes', path: 'assets/images/catalog-wedding.png'}, quantity: 20},
+      { id: 4, name: 'children', nameRus: 'For children', groupImage: {title: 'Cakes for children', path: 'assets/images/catalog-children.png'}, quantity: 16},
+      { id: 5, name: 'man', nameRus: 'For men', groupImage: {title: 'Cakes for men', path: 'assets/images/catalog-man.png'}, quantity: 12},
+      { id: 6, name: 'woman', nameRus: 'For women', groupImage: {title: 'Cakes for women', path: 'assets/images/catalog-woman.png'}, quantity: 16},
     ];
 
     const cakeFillings = [
