@@ -37,6 +37,12 @@ export class HeaderComponent implements OnInit {
     this.isMainNavOpened = !this.isMainNavOpened;
   }
 
+  scrollToElement(el): void {
+      console.log(el);
+      el = '#'+el;
+      el.scrollIntoView({behavior: "smooth", block: "start", inline: "nearest"});
+    }
+
 
   ngOnInit() {
     this.showMainNav();

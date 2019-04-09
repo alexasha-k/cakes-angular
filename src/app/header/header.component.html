@@ -7,7 +7,7 @@
         <div class="main-nav__toggle"
           (click)="mainNavToggle()"></div>
         <li *ngFor="let mainNavLink of mainNavLinks">
-          <a href="#{{ mainNavLink.alias }}">{{ mainNavLink.name }}</a>
+          <a href="/index#{{ mainNavLink.alias }}">{{ mainNavLink.name }}</a>
         </li>
       </ul>
       <a class="phone-number" href="#">{{ phoneNumber }}</a>

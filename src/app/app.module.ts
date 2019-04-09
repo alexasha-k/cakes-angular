@@ -6,6 +6,8 @@ import { MaterialModuleModule } from './material-module/material-module.module';
 import { HttpClientInMemoryWebApiModule } from 'angular-in-memory-web-api';
 import { InMemoryDataService }  from './in-memory-data.service';
 
+import { SwiperModule } from 'angular2-useful-swiper';
+
 import { AppComponent } from './app.component';
 import { HeaderComponent } from './header/header.component';
 import { MainComponent } from './main/main.component';
@@ -19,10 +21,13 @@ import { FeedbackComponent } from './main/feedback/feedback.component';
 import { AboutComponent } from './main/about/about.component';
 import { AdvantagesComponent } from './main/advantages/advantages.component';
 import { ContactsComponent } from './main/contacts/contacts.component';
-import { GalleryDirective } from './gallery.directive';
 import { IconSvgComponent } from './UI/icon-svg/icon-svg.component';
 import { AppRoutingModule } from './/app-routing.module';
 import { CatalogListComponent } from './catalog-list/catalog-list.component';
+import { CarouselComponent } from './UI/carousel/carousel.component';
+import { CarouselDirective } from './UI/carousel/carousel.directive';
+
+
 
 @NgModule({
   declarations: [
@@ -39,9 +44,10 @@ import { CatalogListComponent } from './catalog-list/catalog-list.component';
     AboutComponent,
     AdvantagesComponent,
     ContactsComponent,
-    GalleryDirective,
     IconSvgComponent,
-    CatalogListComponent
+    CatalogListComponent,
+    CarouselComponent,
+    CarouselDirective
   ],
   imports: [
     MaterialModuleModule,
@@ -50,7 +56,8 @@ import { CatalogListComponent } from './catalog-list/catalog-list.component';
     HttpClientInMemoryWebApiModule.forRoot(
       InMemoryDataService, { dataEncapsulation: false, passThruUnknownUrl: true }
     ),
-    AppRoutingModule
+    AppRoutingModule,
+    SwiperModule
   ],
   providers: [],
   bootstrap: [AppComponent]

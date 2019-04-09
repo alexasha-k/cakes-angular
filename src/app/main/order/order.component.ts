@@ -54,6 +54,14 @@ export class OrderComponent implements OnInit {
     this.cakeDecoratingSelected = cakeDecoratingSelected.nameRus;
   }
 
+  config: SwiperOptions = {
+          pagination: '.swiper-pagination',
+          paginationClickable: true,
+          nextButton: '.swiper-button-next',
+          prevButton: '.swiper-button-prev',
+          spaceBetween: 30
+      };
+
 
   ngOnInit() {
     this.showCakeFillings();

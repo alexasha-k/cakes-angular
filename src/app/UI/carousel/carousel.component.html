@@ -1,0 +1,16 @@
+<div class="carousel">
+  <div (click)="nextSlide()"
+      class="carousel__arrow carousel__arrow--left">Left
+      <app-icon-svg iconName="icon-arrow-left"></app-icon-svg>
+    </div>
+  <div (click)="prevSlide()"
+      class="carousel__arrow carousel__arrow--right">Right
+      <app-icon-svg iconName="icon-arrow-right"></app-icon-svg>
+    </div>
+  <div class="carousel__inner">
+    <div *ngFor="let item of items"
+          class="carousel-slide">
+      <ng-container [ngTemplateOutlet]="item.tpl"></ng-container>
+    </div>
+  </div>
+</div>

@@ -10,6 +10,10 @@ body {
   background-color: $pink-light;
 }
 
+input, textarea {
+  font-family: 'Open Sans', sans-serif;
+}
+
 * {
   box-sizing: border-box;
 }
@@ -142,6 +146,61 @@ img {
 .order-step__selected .mat-icon {
   width: 50px;
   height: 50px;
+}
+
+[_nghost-c14] {
+  width: 100%;
+}
+
+.swiper-container {
+
+  padding-left: 70px;
+  padding-right: 70px;
+
+  .swiper-wrapper {
+  }
+
+  .swiper-button-next, .swiper-button-prev {
+    position: absolute;
+    top: 50%;
+    margin-top: -25px;
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    color: $gray-dark;
+    box-shadow: $pink-shadow;
+    cursor: pointer;
+    font-size: 0;
+    text-align: center;
+    padding-top: 14px;
+    background-image: none;
+
+    &:hover {
+      color: $pink;
+    }
+    &.swiper-button-disabled {
+      opacity: 0;
+    }
+    .swiper-button-next {
+      right: 0;
+    }
+    .swiper-button-prev {
+      left: 0;
+    }
+  }
+
+  &__arrow--left {
+    left: 0;
+  }
+
+  &__arrow--right {
+    right: 0;
+  }
+
+  .swiper-slide {
+  }
+
+
 }
 
 @media (max-width: 1199px) {
