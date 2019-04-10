@@ -5,14 +5,11 @@
       <div class="catalog-category__sidebar__inner">
         <nav class="catalog-nav">
           <ul class="catalog-nav__list">
-            <li class="catalog-nav__item">
-              <a class="catalog-nav__link current" href="">{{ catalogGroup.nameRus }}</a>
-            </li>
-            <li class="catalog-nav__item">
-              <a class="catalog-nav__link" href="">For wedding</a>
-            </li>
-            <li class="catalog-nav__item">
-              <a class="catalog-nav__link" href="">For children</a>
+            <li *ngFor="let item of catalogGroups"
+              class="catalog-nav__item">
+              <a class="catalog-nav__link"
+              [class.current]="item.nameRus === catalogGroup.nameRus"
+              routerLink="/catalog/{{item.id}}">{{ item.nameRus }}</a>
             </li>
           </ul>
         </nav>
@@ -44,184 +41,31 @@
       </div>
       <div class="catalog-items">
         <div class="catalog-items__row">
-          <div class="catalog-item">
-
+          <div *ngFor="let item of catalogGroup.items"
+                class="catalog-item">
               <div class="catalog-item__icons"></div>
               <div class="catalog-item__image">
                 <div class="catalog-carousel">
-                  <div class="catalog-carousel__arrows">
-                    <div class="catalog-carousel__arrow"></div>
-                    <div class="catalog-carousel__arrow"></div>
-                  </div>
                   <div class="catalog-carousel__wrapper">
-                    <img src="assets/images/catalog-mousse.png" alt="The best mousse cakes ever">
+                    <img src="{{ item.image}}" alt="">
                   </div>
                 </div>
               </div>
               <div class="catalog-item__desc">
-                <div class="catalog-item__title">Mousse berry</div>
+                <div class="catalog-item__title">{{ item.name }}</div>
                 <div class="catalog-item__price">200$</div>
               </div>
               <div class="catalog-item__actions">
                 <div class="catalog-item__options">
-                  <label>
-                    <input type="radio" checked name="" value="">
-                    <span>1kg</span>
-                  </label>
-                  <label>
-                    <input type="radio" name="" value="">
-                    <span>2kg</span>
+                  <label *ngFor="let opt of item.options; first as isFirst">
+                    <input type="radio" [checked]="isFirst" name="{{item.name}}" value="">
+                    <span>{{ opt.title }}</span>
                   </label>
                 </div>
                 <div class="catalog-item__btns">
                   <button class="btn" type="button" name="button">Add to cart</button>
                 </div>
               </div>
-
-          </div>
-          <div class="catalog-item">
-
-              <div class="catalog-item__icons"></div>
-              <div class="catalog-item__image">
-
-              </div>
-              <div class="catalog-item__desc">
-                <div class="catalog-item__title"></div>
-                <div class="catalog-item__price"></div>
-              </div>
-              <div class="catalog-item__actions">
-                <div class="catalog-item__options"></div>
-                <div class="catalog-item__btns">
-                  <button class="btn" type="button" name="button">Add to cart</button>
-                </div>
-              </div>
-
-          </div>
-          <div class="catalog-item">
-            <div class="catalog-item__wrapper">
-              <div class="catalog-item__icons"></div>
-              <div class="catalog-item__image">
-
-              </div>
-              <div class="catalog-item__desc">
-                <div class="catalog-item__title"></div>
-                <div class="catalog-item__price"></div>
-              </div>
-              <div class="catalog-item__actions">
-                <div class="catalog-item__options"></div>
-                <div class="catalog-item__btns">
-                  <button class="btn" type="button" name="button">Add to cart</button>
-                </div>
-              </div>
-            </div>
-          </div>
-          <div class="catalog-item">
-            <div class="catalog-item__wrapper">
-              <div class="catalog-item__icons"></div>
-              <div class="catalog-item__image">
-
-              </div>
-              <div class="catalog-item__desc">
-                <div class="catalog-item__title"></div>
-                <div class="catalog-item__price"></div>
-              </div>
-              <div class="catalog-item__actions">
-                <div class="catalog-item__options"></div>
-                <div class="catalog-item__btns">
-                  <button class="btn" type="button" name="button">Add to cart</button>
-                </div>
-              </div>
-            </div>
-          </div>
-          <div class="catalog-item">
-            <div class="catalog-item__wrapper">
-              <div class="catalog-item__icons"></div>
-              <div class="catalog-item__image">
-
-              </div>
-              <div class="catalog-item__desc">
-                <div class="catalog-item__title"></div>
-                <div class="catalog-item__price"></div>
-              </div>
-              <div class="catalog-item__actions">
-                <div class="catalog-item__options"></div>
-                <div class="catalog-item__btns">
-                  <button class="btn" type="button" name="button">Add to cart</button>
-                </div>
-              </div>
-            </div>
-          </div>
-          <div class="catalog-item">
-            <div class="catalog-item__wrapper">
-              <div class="catalog-item__icons"></div>
-              <div class="catalog-item__image">
-
-              </div>
-              <div class="catalog-item__desc">
-                <div class="catalog-item__title"></div>
-                <div class="catalog-item__price"></div>
-              </div>
-              <div class="catalog-item__actions">
-                <div class="catalog-item__options"></div>
-                <div class="catalog-item__btns">
-                  <button class="btn" type="button" name="button">Add to cart</button>
-                </div>
-              </div>
-            </div>
-          </div>
-          <div class="catalog-item">
-            <div class="catalog-item__wrapper">
-              <div class="catalog-item__icons"></div>
-              <div class="catalog-item__image">
-
-              </div>
-              <div class="catalog-item__desc">
-                <div class="catalog-item__title"></div>
-                <div class="catalog-item__price"></div>
-              </div>
-              <div class="catalog-item__actions">
-                <div class="catalog-item__options"></div>
-                <div class="catalog-item__btns">
-                  <button class="btn" type="button" name="button">Add to cart</button>
-                </div>
-              </div>
-            </div>
-          </div>
-          <div class="catalog-item">
-            <div class="catalog-item__wrapper">
-              <div class="catalog-item__icons"></div>
-              <div class="catalog-item__image">
-
-              </div>
-              <div class="catalog-item__desc">
-                <div class="catalog-item__title"></div>
-                <div class="catalog-item__price"></div>
-              </div>
-              <div class="catalog-item__actions">
-                <div class="catalog-item__options"></div>
-                <div class="catalog-item__btns">
-                  <button class="btn" type="button" name="button">Add to cart</button>
-                </div>
-              </div>
-            </div>
-          </div>
-          <div class="catalog-item">
-            <div class="catalog-item__wrapper">
-              <div class="catalog-item__icons"></div>
-              <div class="catalog-item__image">
-
-              </div>
-              <div class="catalog-item__desc">
-                <div class="catalog-item__title"></div>
-                <div class="catalog-item__price"></div>
-              </div>
-              <div class="catalog-item__actions">
-                <div class="catalog-item__options"></div>
-                <div class="catalog-item__btns">
-                  <button class="btn" type="button" name="button">Add to cart</button>
-                </div>
-              </div>
-            </div>
           </div>
         </div>
       </div>

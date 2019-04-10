@@ -1,6 +1,7 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 import { HttpClientModule } from '@angular/common/http';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { MaterialModuleModule } from './material-module/material-module.module';
 
 import { HttpClientInMemoryWebApiModule } from 'angular-in-memory-web-api';
@@ -26,6 +27,7 @@ import { AppRoutingModule } from './/app-routing.module';
 import { CatalogListComponent } from './catalog-list/catalog-list.component';
 import { CarouselComponent } from './UI/carousel/carousel.component';
 import { CarouselDirective } from './UI/carousel/carousel.directive';
+import { OrderDialogComponent } from './main/order/order-dialog/order-dialog.component';
 
 
 
@@ -47,11 +49,13 @@ import { CarouselDirective } from './UI/carousel/carousel.directive';
     IconSvgComponent,
     CatalogListComponent,
     CarouselComponent,
-    CarouselDirective
+    CarouselDirective,
+    OrderDialogComponent
   ],
   imports: [
     MaterialModuleModule,
     BrowserModule,
+    BrowserAnimationsModule,
     HttpClientModule,
     HttpClientInMemoryWebApiModule.forRoot(
       InMemoryDataService, { dataEncapsulation: false, passThruUnknownUrl: true }
@@ -59,6 +63,7 @@ import { CarouselDirective } from './UI/carousel/carousel.directive';
     AppRoutingModule,
     SwiperModule
   ],
+  entryComponents: [OrderComponent, OrderDialogComponent],
   providers: [],
   bootstrap: [AppComponent]
 })

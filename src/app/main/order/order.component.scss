@@ -11,6 +11,8 @@
     padding: 50px 80px 80px;
     position: relative;
 
+
+
     .swiper-slide {
       padding-top: 30px;
       margin-bottom: 5px;
@@ -273,6 +275,34 @@
   }
 }
 
+@media (max-width: 991px) {
+  .order-submit {
+    &__row {
+      align-items: center;
+      flex-direction: column;
+    }
+    &__item {
+      width: 100%;
+      text-align: center;
+
+      .btn {
+        width: 100%;
+      }
+
+      &:not(:last-child) {
+        margin-right: 0;
+        margin-bottom: 20px;
+      }
+    }
+    &__title {
+      margin-bottom: 10px;
+    }
+    &__desc {
+      width: 100%;
+    }
+  }
+}
+
 @media (max-width: 767px) {
   .order {
     .order-step {
@@ -340,22 +370,4 @@
     }
   }
 
-  .order-submit {
-    &__row {
-      align-items: center;
-      flex-direction: column;
-    }
-    &__item {
-      width: 100%;
-      text-align: center;
-
-      &:not(:last-child) {
-        margin-right: 0;
-        margin-bottom: 20px;
-      }
-    }
-    &__title {
-      margin-bottom: 10px;
-    }
-  }
 }

@@ -148,8 +148,38 @@ img {
   height: 50px;
 }
 
+.order-rules {
+  max-width: 520px;
+  &__list {
+    font-size: 22px;
+
+    li:not(:last-child) {
+      margin-bottom: 12px;
+    }
+  }
+}
+
 [_nghost-c14] {
   width: 100%;
+}
+
+.swiper-container:before, .swiper-container:after {
+  content: '';
+  display: block;
+  width: 60px;
+  position: absolute;
+  background: white;
+  top: 0;
+  bottom: 0;
+  z-index: 2;
+}
+
+.swiper-container:before {
+  left: 0;
+}
+
+.swiper-container:after {
+  right: 0;
 }
 
 .swiper-container {

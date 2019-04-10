@@ -24,9 +24,7 @@
     padding-top: 40%;
     background-color: $white;
     box-shadow: 0 10px 13px 0 rgba(163,6,60,0.05);
-    background-position: center;
-    background-repeat: no-repeat;
-    background-size: contain;
+
 
     &:hover {
       opacity: 0.9;
@@ -50,6 +48,17 @@
 
   &__card--right {
 
+  }
+
+  &__card-image {
+    position: absolute;
+    top: 40px;
+    left: 40px;
+    bottom: 40px;
+    right: 40px;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: contain;
   }
 
   &__card-wrap {
@@ -104,6 +113,13 @@
       }
     }
 
+    &__card-image {
+      top: 24px;
+      left: 24px;
+      bottom: 24px;
+      right: 24px;
+    }
+
     &__card-wrap {
       top: 24px;
       left: 24px;
@@ -143,13 +159,27 @@
       margin-bottom: 12px;
     }
 
+    &__card-image {
+      top: 12px;
+      left: 12px;
+      bottom: 12px;
+      right: 12px;
+    }
+
     &__card-wrap {
       top: 12px;
       left: 12px;
     }
 
     &__card-link {
-      display: none;
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      span {
+        display: none;
+      }
     }
 
     &__card-name {

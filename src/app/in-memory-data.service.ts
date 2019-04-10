@@ -28,13 +28,28 @@ export class InMemoryDataService implements InMemoryDbService {
       { name: 'Instagram', iconPath: 'icon-insta.svg', link: 'instagram.com'}
     ];
 
+    const catalogGroupsItems = [
+      { id: 1, name: 'Classic berry', image: 'assets/images/catalog-mousse.png', options: [{ title: "1kg", price: 200}, { title: "2kg", price: 300}] },
+      { id: 2, name: 'Classic Chocolate', image: 'assets/images/catalog-mousse.png', options: [{ title: "1kg", price: 200}, { title: "2kg", price: 300}] },
+      { id: 3, name: 'Classic orange', image: 'assets/images/catalog-mousse.png', options: [{ title: "1kg", price: 200}, { title: "2kg", price: 300}] },
+      { id: 4, name: 'Red velvet', image: 'assets/images/catalog-mousse.png', options: [{ title: "1kg", price: 200}, { title: "2kg", price: 300}] },
+      { id: 5, name: 'Angel cake', image: 'assets/images/catalog-mousse.png', options: [{ title: "1kg", price: 200}, { title: "2kg", price: 300}] },
+      { id: 6, name: 'Red velvet', image: 'assets/images/catalog-mousse.png', options: [{ title: "1kg", price: 200}, { title: "2kg", price: 300}] },
+      { id: 7, name: 'Three chocolate', image: 'assets/images/catalog-mousse.png', options: [{ title: "1kg", price: 200}, { title: "2kg", price: 300}] },
+      { id: 8, name: 'Classic vanilla', image: 'assets/images/catalog-mousse.png', options: [{ title: "1kg", price: 200}, { title: "2kg", price: 300}] },
+      { id: 9, name: 'Classic citrus', image: 'assets/images/catalog-mousse.png', options: [{ title: "1kg", price: 200}, { title: "2kg", price: 300}] },
+      { id: 10, name: 'Classic cheesecake', image: 'assets/images/catalog-mousse.png', options: [{ title: "1kg", price: 200}, { title: "2kg", price: 300}] },
+      { id: 11, name: 'White Lady Cake', image: 'assets/images/catalog-mousse.png', options: [{ title: "1kg", price: 200}, { title: "2kg", price: 300}] },
+      { id: 12, name: 'Almond cake', image: 'assets/images/catalog-mousse.png', options: [{ title: "2kg", price: 300}] }
+    ]
+
     const catalogGroups = [
-      { id: 1, name: 'classic', nameRus: 'Classic', groupImage: {title: 'Classic cakes', path: 'assets/images/catalog-classic.png'}, quantity: 24},
-      { id: 2, name: 'mousse', nameRus: 'Mousse', groupImage: {title: 'Mousse cakes', path: 'assets/images/catalog-mousse.png'}, quantity: 12},
-      { id: 3, name: 'wedding', nameRus: 'For wedding', groupImage: {title: 'Свадебные cakes', path: 'assets/images/catalog-wedding.png'}, quantity: 20},
-      { id: 4, name: 'children', nameRus: 'For children', groupImage: {title: 'Cakes for children', path: 'assets/images/catalog-children.png'}, quantity: 16},
-      { id: 5, name: 'man', nameRus: 'For men', groupImage: {title: 'Cakes for men', path: 'assets/images/catalog-man.png'}, quantity: 12},
-      { id: 6, name: 'woman', nameRus: 'For women', groupImage: {title: 'Cakes for women', path: 'assets/images/catalog-woman.png'}, quantity: 16},
+      { id: 1, name: 'classic', nameRus: 'Classic', items: catalogGroupsItems, groupImage: {title: 'Classic cakes', path: 'assets/images/catalog-classic.png'}, quantity: 24},
+      { id: 2, name: 'mousse', nameRus: 'Mousse', items: catalogGroupsItems, groupImage: {title: 'Mousse cakes', path: 'assets/images/catalog-mousse.png'}, quantity: 12},
+      { id: 3, name: 'wedding', nameRus: 'For wedding', items: catalogGroupsItems, groupImage: {title: 'Свадебные cakes', path: 'assets/images/catalog-wedding.png'}, quantity: 20},
+      { id: 4, name: 'children', nameRus: 'For children', items: catalogGroupsItems, groupImage: {title: 'Cakes for children', path: 'assets/images/catalog-children.png'}, quantity: 16},
+      { id: 5, name: 'man', nameRus: 'For men', items: catalogGroupsItems, groupImage: {title: 'Cakes for men', path: 'assets/images/catalog-man.png'}, quantity: 12},
+      { id: 6, name: 'woman', nameRus: 'For women', items: catalogGroupsItems, groupImage: {title: 'Cakes for women', path: 'assets/images/catalog-woman.png'}, quantity: 16},
     ];
 
     const cakeFillings = [

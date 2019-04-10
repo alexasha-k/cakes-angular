@@ -1,6 +1,8 @@
 import { Component, OnInit } from '@angular/core';
+import {MatDialog} from '@angular/material';
 
 import { MainNavService } from '../../main-nav.service';
+import { OrderDialogComponent } from './order-dialog/order-dialog.component';
 
 @Component({
   selector: 'app-order',
@@ -9,7 +11,25 @@ import { MainNavService } from '../../main-nav.service';
 })
 export class OrderComponent implements OnInit {
 
-  constructor(private mainNavService: MainNavService) { }
+  constructor(
+    private mainNavService: MainNavService,
+    public dialog: MatDialog) { }
+
+  openDialog(): void {
+    const dialogRef = this.dialog.open(OrderDialogComponent, {
+      width: '600px',
+      data: {
+        cakeFillingsSelected: this.cakeFillingsSelected,
+        cakeSizesSelected: this.cakeSizesSelected,
+        cakeDecoratingSelected: this.cakeDecoratingSelected
+      }
+    });
+
+    dialogRef.afterClosed().subscribe(result => {
+      console.log('The dialog was closed');
+      this.animal = result;
+    });
+  }
 
   cakeFillings: CakeFillings[];
   showCakeFillings() {

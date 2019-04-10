@@ -12,6 +12,7 @@ import { MainNavService } from '../main-nav.service';
 export class CatalogListComponent implements OnInit {
 
   @Input() catalogGroup : СatalogGroups;
+  catalogGroups: СatalogGroups[];
 
   constructor(
     private route: ActivatedRoute,
@@ -28,8 +29,17 @@ export class CatalogListComponent implements OnInit {
       );
   }
 
+  showCatalogGroups() {
+    this.mainNavService.getCatalogGroups()
+      .subscribe(
+        catalogGroups => this.catalogGroups = catalogGroups,
+        error => this.error = error
+      );
+  }
+
   ngOnInit(): void {
     this.getCatalogList();
+    this.showCatalogGroups();
   }
 
 }

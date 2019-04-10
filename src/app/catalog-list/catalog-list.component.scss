@@ -199,3 +199,31 @@
     text-align: center;
   }
 }
+
+@media (max-width: 1199px) {
+  .catalog-items {
+    &__row {
+      grid-template-columns: 1fr 1fr;
+    }
+  }
+}
+
+@media (max-width: 991px) {
+  .catalog-category {
+    display: block;
+    &__sidebar {
+      margin-bottom: 44px;
+    }
+  }
+  .sidebar-banner {
+    display: none;
+  }
+}
+
+@media (max-width: 575px) {
+  .catalog-items {
+    &__row {
+      grid-template-columns: 1fr;
+    }
+  }
+}
