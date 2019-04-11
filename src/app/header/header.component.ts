@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, HostListener } from '@angular/core';
 
 import { MainNavService } from '../main-nav.service';
 
@@ -12,7 +12,6 @@ export class HeaderComponent implements OnInit {
   constructor(private mainNavService: MainNavService) { }
 
   mainNavLinks: MainNav[];
-
   showMainNav() {
     this.mainNavService.getMainNav()
       .subscribe(
@@ -22,7 +21,6 @@ export class HeaderComponent implements OnInit {
   }
 
   phoneNumber: string;
-
   showPhoneNumber() {
     this.mainNavService.getPhoneNumber()
       .subscribe(
@@ -32,16 +30,20 @@ export class HeaderComponent implements OnInit {
   }
 
   isMainNavOpened: boolean = false;
-
   mainNavToggle(): void {
     this.isMainNavOpened = !this.isMainNavOpened;
   }
 
-  scrollToElement(el): void {
-      console.log(el);
-      el = '#'+el;
-      el.scrollIntoView({behavior: "smooth", block: "start", inline: "nearest"});
+  isStickHeader: boolean = false;
+  @HostListener('window:scroll', ['$event'])
+  onWindowScroll($event) {
+    if (window.scrollY > 103) {
+      this.isStickHeader = true;
+    } else {
+      this.isStickHeader = false;
     }
+  }
+
 
 
   ngOnInit() {

@@ -1,0 +1,50 @@
+.mat-dialog-container {
+  background-color: $white;
+  box-shadow: $pink-shadow;
+  position: relative;
+  color: $black;
+
+  .mat-dialog-actions {
+    margin-bottom: 0;
+  }
+
+  .mat-dialog-close-btn {
+    display: block;
+    position: absolute;
+    width: 36px;
+    height: 36px;
+    top: 25px;
+    right: 25px;
+    background-color: transparent;
+    border: none;
+    box-shadow: none;
+    cursor: pointer;
+
+    &::before, &::after {
+      content: '';
+      display: block;
+      position: absolute;
+      top: 18px;
+      left: 0;
+      width: 100%;
+      height: 3px;
+      background-color: $gray-dark;
+      transform-origin: center;
+      transition: 150ms ease;
+    }
+
+    &::before {
+      transform: rotate(45deg);
+    }
+
+    &::after {
+      transform: rotate(-45deg);
+    }
+
+    &:hover {
+      &::before, &::after {
+        background-color: $pink;
+      }
+    }
+  }
+}

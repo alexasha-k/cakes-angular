@@ -1,0 +1,63 @@
+[_nghost-c14] {
+  width: 100%;
+}
+
+.swiper-container:before, .swiper-container:after {
+  content: '';
+  display: block;
+  width: 60px;
+  position: absolute;
+  background: white;
+  top: 0;
+  bottom: 0;
+  z-index: 2;
+}
+
+.swiper-container:before {
+  left: 0;
+}
+
+.swiper-container:after {
+  right: 0;
+}
+
+.swiper-container {
+
+  .swiper-button-next, .swiper-button-prev {
+    position: absolute;
+    top: 50%;
+    margin-top: -25px;
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    color: $gray-dark;
+    box-shadow: $pink-shadow;
+    cursor: pointer;
+    font-size: 0;
+    text-align: center;
+    padding-top: 14px;
+    background-image: none;
+
+    &:hover {
+      color: $pink;
+    }
+    &.swiper-button-disabled {
+      opacity: 0;
+    }
+    .swiper-button-next {
+      right: 0;
+    }
+    .swiper-button-prev {
+      left: 0;
+    }
+  }
+
+  &__arrow--left {
+    left: 0;
+  }
+
+  &__arrow--right {
+    right: 0;
+  }
+
+}

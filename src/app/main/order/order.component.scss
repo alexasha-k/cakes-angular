@@ -4,13 +4,17 @@
   margin-bottom: 100px;
   counter-reset: order-name;
 
+  /deep/ .swiper-container {
+    padding-left: 70px;
+    padding-right: 70px;
+  }
+
   .order-step {
     background-color: $white;
     box-shadow: 0 10px 13px 0 rgba(163,6,60,0.05);
     margin-bottom: 35px;
     padding: 50px 80px 80px;
     position: relative;
-
 
 
     .swiper-slide {
@@ -31,6 +35,11 @@
 
         .order-step__selected {
           opacity: 1;
+
+          /deep/ .mat-icon {
+            width: 50px;
+            height: 50px;
+          }
         }
       }
     }
@@ -38,8 +47,8 @@
     &__selected {
       position: absolute;
       color: $pink;
-      top: -25px;
-      left: -25px;
+      top: -10px;
+      left: -10px;
       opacity: 0;
     }
 

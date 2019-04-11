@@ -1,4 +1,4 @@
-<header>
+<header (scroll)="onWindowScroll($event)" [class.fixed]="isStickHeader">
   <div class="container">
     <div class="header-wrapper">
       <a href="/" class="logo">Cakes</a>
