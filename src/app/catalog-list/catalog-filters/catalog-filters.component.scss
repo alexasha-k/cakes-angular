@@ -1,0 +1,25 @@
+@import "../../../scss/variables";
+
+.catalog-filters {
+  &__list {
+
+  }
+  &__name {
+    display: block;
+    border-bottom: 1px solid #dedede;
+    font-size: 20px;
+    line-height: 32px;
+    padding: 5px 0;
+    letter-spacing: -1px;
+    color: $gray-dark;
+    text-decoration: none;
+    text-transform: uppercase;
+    font-weight: 600;
+    margin: 0;
+  }
+  &__val {
+    display: block;
+    border-top: 1px solid #fbebea;
+    margin: 0;
+  }
+}

@@ -1,0 +1,19 @@
+@import "../../../scss/variables";
+
+.sidebar-banner {
+  margin-top: 36px;
+  background-color: $white;
+  box-shadow: $pink-shadow;
+  padding: 20px;
+  img {
+    max-width: 100%;
+    height: auto;
+    text-align: center;
+  }
+}
+
+@media (max-width: 991px) {
+  .sidebar-banner {
+    display: none;
+  }
+}

@@ -3,75 +3,14 @@
   <div class="catalog-category">
     <div class="catalog-category__sidebar">
       <div class="catalog-category__sidebar__inner">
-        <nav class="catalog-nav">
-          <ul class="catalog-nav__list">
-            <li *ngFor="let item of catalogGroups"
-              class="catalog-nav__item">
-              <a class="catalog-nav__link"
-              [class.current]="item.nameRus === catalogGroup.nameRus"
-              routerLink="/catalog/{{item.id}}">{{ item.nameRus }}</a>
-            </li>
-          </ul>
-        </nav>
-        <div class="catalog-filters">
-          <dl class="catalog-filters__list">
-            <dt class="catalog-filters__name">Price</dt>
-            <dl class="catalog-filters__val">
-              <input type="number" min="{{ minPrice }}" max="{{ maxPrice }}" name="" value="{{ minPrice }}">
-              <input type="number" min="{{ minPrice }}" max="{{ maxPrice }}" name="" value="{{ maxPrice }}">
-            </dl>
-          </dl>
-        </div>
+        <app-catalog-nav></app-catalog-nav>
+        <app-catalog-filters></app-catalog-filters>
       </div>
-      <div class="sidebar-banner">
-        <a href="#">
-          <img src="assets/images/catalog-mousse.png" alt="The best mousse cakes ever">
-        </a>
-      </div>
+      <app-sidebar-banner></app-sidebar-banner>
     </div>
     <div class="catalog-category__content">
-      <div class="catalog-view">
-        <div class="catalog-view__row">
-          <div class="catalog-view__group">
-            <div class="catalog-view__item">Price</div>
-            <div class="catalog-view__item">Size</div>
-          </div>
-          <div class="catalog-view__group">
-            <div class="catalog-view__item">List</div>
-            <div class="catalog-view__item active">Cards</div>
-          </div>
-        </div>
-      </div>
-      <div class="catalog-items">
-        <div class="catalog-items__row">
-          <div *ngFor="let item of catalogGroup.items"
-                class="catalog-item">
-              <div class="catalog-item__icons"></div>
-              <div class="catalog-item__image">
-                <div class="catalog-carousel">
-                  <div class="catalog-carousel__wrapper">
-                    <img src="{{ item.image}}" alt="">
-                  </div>
-                </div>
-              </div>
-              <div class="catalog-item__desc">
-                <div class="catalog-item__title">{{ item.name }}</div>
-                <div class="catalog-item__price">200$</div>
-              </div>
-              <div class="catalog-item__actions">
-                <div class="catalog-item__options">
-                  <label *ngFor="let opt of item.options; first as isFirst">
-                    <input type="radio" [checked]="isFirst" name="{{item.name}}" value="">
-                    <span>{{ opt.title }}</span>
-                  </label>
-                </div>
-                <div class="catalog-item__btns">
-                  <button class="btn" type="button" name="button">Add to cart</button>
-                </div>
-              </div>
-          </div>
-        </div>
-      </div>
+      <app-catalog-view (changeCatalogView)="changeView($event)"></app-catalog-view>
+      <app-catalog-items catalogGroup={{catalogGroup}} [showListView]="showListView"></app-catalog-items>
     </div>
   </div>
 </div>

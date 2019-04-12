@@ -1,0 +1,36 @@
+@import "../../../scss/variables";
+
+.catalog-view {
+
+  background-color: $white;
+  box-shadow: $pink-shadow;
+  padding: 10px 0;
+
+  &__row {
+    display: flex;
+    align-items: flex-end;
+    justify-content: flex-end;
+  }
+
+  &__group {
+    margin-right: 24px;
+    display: inline-flex;
+  }
+
+  &__item {
+    cursor: pointer;
+
+    &:not(:last-child) {
+      padding-right: 10px;
+      margin-right: 10px;
+      border-right: 1px solid #dedede;
+    }
+
+    &.active {
+      color: $pink;
+    }
+    &:hover {
+      color: $pink;
+    }
+  }
+}

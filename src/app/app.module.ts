@@ -28,6 +28,11 @@ import { CatalogListComponent } from './catalog-list/catalog-list.component';
 import { CarouselComponent } from './UI/carousel/carousel.component';
 import { CarouselDirective } from './UI/carousel/carousel.directive';
 import { OrderDialogComponent } from './main/order/order-dialog/order-dialog.component';
+import { CatalogNavComponent } from './catalog-list/catalog-nav/catalog-nav.component';
+import { CatalogFiltersComponent } from './catalog-list/catalog-filters/catalog-filters.component';
+import { SidebarBannerComponent } from './common/sidebar-banner/sidebar-banner.component';
+import { CatalogViewComponent } from './catalog-list/catalog-view/catalog-view.component';
+import { CatalogItemsComponent } from './catalog-list/catalog-items/catalog-items.component';
 
 
 
@@ -50,7 +55,12 @@ import { OrderDialogComponent } from './main/order/order-dialog/order-dialog.com
     CatalogListComponent,
     CarouselComponent,
     CarouselDirective,
-    OrderDialogComponent
+    OrderDialogComponent,
+    CatalogNavComponent,
+    CatalogFiltersComponent,
+    SidebarBannerComponent,
+    CatalogViewComponent,
+    CatalogItemsComponent
   ],
   imports: [
     MaterialModuleModule,

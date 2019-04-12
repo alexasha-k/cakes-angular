@@ -1,0 +1,10 @@
+<nav class="catalog-nav">
+  <ul class="catalog-nav__list">
+    <li *ngFor="let catalogGroup of catalogGroups"
+      class="catalog-nav__item">
+      <a class="catalog-nav__link"
+      routerLinkActive="current"
+      routerLink="/catalog/{{catalogGroup.id}}">{{ catalogGroup.nameRus }}</a>
+    </li>
+  </ul>
+</nav>

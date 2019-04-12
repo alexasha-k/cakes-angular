@@ -1,0 +1,18 @@
+<div class="catalog-view">
+  <div class="catalog-view__row">
+    <div class="catalog-view__group">
+      <div
+        *ngFor="let sort of sortTypes"
+        (click)="setSortType(sort)"
+        class="catalog-view__item"
+        [class.active]="sort === sortType">{{ sort }}</div>
+    </div>
+    <div class="catalog-view__group">
+      <div
+        *ngFor="let item of viewTypes"
+        (click)="setView(item)"
+        class="catalog-view__item"
+        [class.active]="item === viewType">{{ item }}</div>
+    </div>
+  </div>
+</div>

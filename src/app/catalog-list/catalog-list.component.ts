@@ -42,6 +42,11 @@ export class CatalogListComponent implements OnInit {
       );
   }
 
+  showListView: boolean = false;
+  changeView(event) {
+    this.showListView = (event === "List");
+  }
+
 
 
   maxPrice: number = 200;
