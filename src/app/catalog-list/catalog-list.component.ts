@@ -2,10 +2,11 @@ import { Component, OnInit, Input, Output } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
 import { Location } from '@angular/common';
 
-import { from } from 'rxjs';
-import { filter } from 'rxjs/operators';
-
 import { MainNavService } from '../main-nav.service';
+import { CatalogListService } from './catalog-list.service';
+
+import { Observable, from } from 'rxjs';
+import { filter } from 'rxjs/operators';
 
 @Component({
   selector: 'app-catalog-list',
@@ -22,7 +23,8 @@ export class CatalogListComponent implements OnInit {
   constructor(
     private route: ActivatedRoute,
     private mainNavService: MainNavService,
-    private location: Location
+    private location: Location,
+    private catalogListService: CatalogListService
   ) { }
 
   getCatalogList(): void {
@@ -42,12 +44,19 @@ export class CatalogListComponent implements OnInit {
       );
   }
 
+  sortCatalogGroup() {
+    const category = +this.route.snapshot.paramMap.get('id');
+    this.mainNavService.getCatalogSubgroup(category)
+      .pipe(
+        filter(function(item) {console.log(item) return item.id < 5})
+      )
+      .subscribe(item => console.log(item));
+  }
+
   showListView: boolean = false;
   changeView(event) {
     this.showListView = (event === "List");
   }
-
-
 
   maxPrice: number = 200;
   minPrice: number = 10;
@@ -58,10 +67,6 @@ export class CatalogListComponent implements OnInit {
   ngOnInit(): void {
     this.getCatalogList();
     this.showCatalogGroups();
+    this.sortCatalogGroup();
   }
-
 }
-
-//from(catalogGroup).pipe(
-//  filter(catalogGroup => catalogGroup.options[0].price > 100)
-//).subscribe(catalogGroup => console.log(catalogGroup));
