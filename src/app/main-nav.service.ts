@@ -2,6 +2,7 @@ import { Injectable } from '@angular/core';
 import { HttpClient, HttpParams } from '@angular/common/http';
 
 import { Observable, of } from 'rxjs';
+import { filter, map } from 'rxjs/operators';
 
 export interface MainNav {
   name: string;
@@ -91,5 +92,14 @@ export class MainNavService {
   cakeDecoratingURL = 'api/cakeDecorating';
   getCakeDecorating(): Observable<CakeDecorating> {
      return this.http.get<CakeDecorating>(this.cakeDecoratingURL);
+  }
+
+  maxPriceUrl = 'api/maxPrice';
+  getMaxPrice(): Observable<number> {
+     return this.http.get<number>(this.maxPriceUrl);
+  }
+  minPriceUrl = 'api/minPrice';
+  getMinPrice(): Observable<number> {
+     return this.http.get<number>(this.minPriceUrl);
   }
 }

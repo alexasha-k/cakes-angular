@@ -2,8 +2,20 @@
   <dl class="catalog-filters__list">
     <dt class="catalog-filters__name">Price</dt>
     <dl class="catalog-filters__val">
-      <input type="number" min="{{ minPrice }}" max="{{ maxPrice }}" name="" value="{{ minPrice }}">
-      <input type="number" min="{{ minPrice }}" max="{{ maxPrice }}" name="" value="{{ maxPrice }}">
+      <input type="number"
+      [(ngModel)]="minPrice"
+      min="{{ minPrice }}"
+      max="{{ maxPrice }}"
+      name=""
+      value="{{ minPrice }}"
+      (ngModelChange)="onModelChange($event)">
+      <input type="number"
+      [(ngModel)]="maxPrice"
+      min="{{ minPrice }}"
+      max="{{ maxPrice }}"
+      name=""
+      value="{{ maxPrice }}"
+      (ngModelChange)="onModelChange($event)">
     </dl>
   </dl>
 </div>

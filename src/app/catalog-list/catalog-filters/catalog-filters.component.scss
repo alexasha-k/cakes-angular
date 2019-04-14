@@ -21,5 +21,19 @@
     display: block;
     border-top: 1px solid #fbebea;
     margin: 0;
+    padding-top: 12px;
+
+    input {
+      border: none;
+      border-bottom: 1px solid #c9bcbb;
+      width: calc(50% - 12px);
+      font-size: 18px;
+      line-height: 24px;
+      background-color: transparent;
+      padding: 8px 0 0;
+      & + input {
+        margin-left: 24px;
+      }
+    }
   }
 }

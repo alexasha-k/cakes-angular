@@ -2,7 +2,8 @@
   [class.catalog-items--list]="showListView"
   class="catalog-items">
   <div class="catalog-items__row">
-    <div *ngFor="let item of catalogGroup.items"
+    <div *ngFor="let item of catalogGroupItems"
+         [class.hidden]="item.options[0].price < minPrice || item.options[0].price > maxPrice"
           class="catalog-item">
         <div class="catalog-item__icons"></div>
         <div class="catalog-item__image">

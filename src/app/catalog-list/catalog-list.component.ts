@@ -44,29 +44,30 @@ export class CatalogListComponent implements OnInit {
       );
   }
 
-  sortCatalogGroup() {
-    const category = +this.route.snapshot.paramMap.get('id');
-    this.mainNavService.getCatalogSubgroup(category)
-      .pipe(
-        filter(function(item) {console.log(item) return item.id < 5})
-      )
-      .subscribe(item => console.log(item));
-  }
-
   showListView: boolean = false;
   changeView(event) {
     this.showListView = (event === "List");
   }
 
-  maxPrice: number = 200;
-  minPrice: number = 10;
-  filterByPrice(el) {
-    return el.options[0].price <= 200 && el.options[0].price >= 0;
+  maxPrice: number;
+  minPrice: number;
+  changeViewMinMaxPrice(event) {
+    this.maxPrice = event.maxPrice;
+    this.minPrice = event.minPrice;
+  }
+
+  showMaxPrice() {
+    this.mainNavService.getMaxPrice().subscribe(price => this.maxPrice = price);
+  }
+
+  showMinPrice() {
+    this.mainNavService.getMinPrice().subscribe(price => this.minPrice = price);
   }
 
   ngOnInit(): void {
     this.getCatalogList();
     this.showCatalogGroups();
-    this.sortCatalogGroup();
+    this.showMaxPrice();
+    this.showMinPrice();
   }
 }

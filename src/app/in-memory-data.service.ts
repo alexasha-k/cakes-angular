@@ -41,7 +41,11 @@ export class InMemoryDataService implements InMemoryDbService {
       { id: 10, name: 'Classic cheesecake', image: 'assets/images/catalog-mousse.png', options: [{ title: "1kg", price: 90}, { title: "2kg", price: 300}] },
       { id: 11, name: 'White Lady Cake', image: 'assets/images/catalog-mousse.png', options: [{ title: "1kg", price: 100}, { title: "2kg", price: 300}] },
       { id: 12, name: 'Almond cake', image: 'assets/images/catalog-mousse.png', options: [{ title: "2kg", price: 110}] }
-    ]
+    ];
+
+    const maxPrice = 200;
+
+    const minPrice = 50;
 
     const catalogGroups = [
       { id: 1, name: 'classic', nameRus: 'Classic', items: catalogGroupsItems, groupImage: {title: 'Classic cakes', path: 'assets/images/catalog-classic.png'}, quantity: 24},
@@ -71,6 +75,11 @@ export class InMemoryDataService implements InMemoryDbService {
       { name: 'chocolate', nameRus: 'Chocolate', imageUrl: 'assets/images/Decorating-1.png', price: 500, priceUnit: 'kg'}
     ];
 
-    return {mainNav, phoneNumber, sNetworkLinks, catalogGroups, cakeFillings, cakeSizes, cakeDecorating};
+    return {mainNav, phoneNumber, sNetworkLinks, catalogGroups, cakeFillings, cakeSizes, cakeDecorating, maxPrice, minPrice};
+  }
+
+  genMaxPrice(): number {
+    console.log(Math.max(...catalogGroupsItems.map(item => item.options[item.options.length - 1].price)))
+    return maxPrice = Math.max(...catalogGroupsItems.map(item => item.options[item.options.length - 1].price))
   }
 }

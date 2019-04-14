@@ -4,13 +4,20 @@
     <div class="catalog-category__sidebar">
       <div class="catalog-category__sidebar__inner">
         <app-catalog-nav></app-catalog-nav>
-        <app-catalog-filters></app-catalog-filters>
+        <app-catalog-filters
+        [maxPrice]="maxPrice"
+        [minPrice]="minPrice"
+        (changeMinMaxPrice)="changeViewMinMaxPrice($event)"
+        ></app-catalog-filters>
       </div>
       <app-sidebar-banner></app-sidebar-banner>
     </div>
     <div class="catalog-category__content">
       <app-catalog-view (changeCatalogView)="changeView($event)"></app-catalog-view>
-      <app-catalog-items catalogGroup={{catalogGroup}} [showListView]="showListView"></app-catalog-items>
+      <app-catalog-items
+          [showListView]="showListView"
+          [maxPrice]="maxPrice"
+          [minPrice]="minPrice"></app-catalog-items>
     </div>
   </div>
 </div>
