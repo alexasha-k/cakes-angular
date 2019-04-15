@@ -8,19 +8,7 @@
     flex-basis: 50%;
     padding-right: 80px;
   }
-  .text-field {
-    border: none;
-    border-bottom: 1px solid #c9bcbb;
-    width: 100%;
-    font-size: 18px;
-    line-height: 24px;
-    background-color: transparent;
-    margin-bottom: 40px;
-  }
   .form-field {
-    label {
-      display: block;
-    }
     & + .btn {
       margin-top: 80px;
     }

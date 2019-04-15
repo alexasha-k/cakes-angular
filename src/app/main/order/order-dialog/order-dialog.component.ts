@@ -1,4 +1,5 @@
-import { Component, OnInit, Inject } from '@angular/core';
+import { Component, OnInit, Inject, Input } from '@angular/core';
+import { FormBuilder, FormControl, FormGroup, Validators } from '@angular/forms';
 import {MatDialogRef, MAT_DIALOG_DATA} from '@angular/material';
 
 export interface DialogData {
@@ -16,11 +17,34 @@ export class OrderDialogComponent implements OnInit {
 
   constructor(
     public dialogRef: MatDialogRef<OrderDialogComponent>,
-    @Inject(MAT_DIALOG_DATA) public data: DialogData
+    @Inject(MAT_DIALOG_DATA) public data: DialogData,
+    private fb: FormBuilder
   ) { }
+
+  orderForm = this.fb.group({
+    name: ['', Validators.required],
+    phone: ['', Validators.required],
+    address: this.fb.group({
+      street: ['', Validators.required],
+      city: ['', Validators.required],
+      state: ['', Validators.required],
+      zip: ['', Validators.required]
+    }),
+    message: [''],
+    orderDetails: this.fb.group({
+      cakeFillingsSelected: [{value: data.cakeFillingsSelected, disabled: true}, Validators.required],
+      cakeSizesSelected: [{value: data.cakeSizesSelected, disabled: true}, Validators.required],
+      cakeDecoratingSelected: [{value: data.cakeDecoratingSelected, disabled: true}, Validators.required],
+    })
+  });
 
   onNoClick(): void {
     this.dialogRef.close();
+  }
+
+  onSubmit() {
+  // TODO: Use EventEmitter with form value
+    console.warn(this.orderForm.getRawValue());
   }
 
 }

@@ -49,6 +49,11 @@ export class CatalogListComponent implements OnInit {
     this.showListView = (event === "List");
   }
 
+  showListSort: string;
+  changeSort(event) {
+    this.showListSort = event;
+  }
+
   maxPrice: number;
   minPrice: number;
   changeViewMinMaxPrice(event) {

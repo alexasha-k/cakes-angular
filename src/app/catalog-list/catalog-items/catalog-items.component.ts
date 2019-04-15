@@ -1,4 +1,4 @@
-import { Component, OnInit, Input } from '@angular/core';
+import { Component, OnInit, Input, OnChanges, SimpleChange } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
 
 import { Observable, from, of } from 'rxjs';
@@ -14,8 +14,10 @@ import { MainNavService } from '../../main-nav.service';
 export class CatalogItemsComponent implements OnInit {
 
   @Input() showListView : boolean;
+  @Input() showListSort : string;
   @Input() maxPrice : number;
   @Input() minPrice : number;
+
 
   constructor(
     private route: ActivatedRoute,
@@ -34,19 +36,39 @@ export class CatalogItemsComponent implements OnInit {
       .subscribe(item => this.catalogGroupItems = item);
   }
 
-  sortCatalogGroupItems() {
+  sortCatalogGroupItems(type) {
+    if (!type) return false;
+    console.log(type);
     const category = +this.route.snapshot.paramMap.get('id');
-    this.mainNavService.getCatalogSubgroup(category)
-    .pipe(
-      //map(({ items }) => items.sort((a,b) => a.options[0].price - b.options[0].price))
-      map(({ items }) => items.filter(a => a.options[0].price > this.minPrice && a.options[0].price < this.maxPrice))
-    )
-    .subscribe(item => console.log(item));
+    if (type == "Price") {
+      this.mainNavService.getCatalogSubgroup(category)
+      .pipe(
+        map(({ items }) => items.sort((a,b) => a.options[0].price - b.options[0].price))
+      )
+      .subscribe(item => this.catalogGroupItems = item);
+    } else if (type == "Size") {
+      this.mainNavService.getCatalogSubgroup(category)
+      .pipe(
+        map(({ items }) => items.sort((a,b) => parseInt(a.options[0].title) - parseInt(b.options[0].title)))
+      )
+      .subscribe(item => this.catalogGroupItems = item);
+    }
+
   }
 
   ngOnInit() {
     this.getCatalogGroupItems();
-    //this.sortCatalogGroupItems();
+  }
+
+  ngOnChanges(changes: {[propKey: string]: SimpleChange}) {
+    for (let propName in changes) {
+      if (propName == "maxPrice" || propName == "minPrice") {
+        this.getCatalogGroupItems();
+      }
+      if (propName == "showListSort") {
+        this.sortCatalogGroupItems(this.showListSort);
+      }
+    }
   }
 
 }

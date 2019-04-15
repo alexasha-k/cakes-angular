@@ -1,0 +1,34 @@
+@import '../../../../scss/variables';
+.order-details {
+  margin-bottom: 32px;
+  padding: 32px 12px;
+  box-shadow: $pink-shadow;
+  background-color: $pink-light;
+  border: 1px solid rgba(0, 0, 0, 0.1);
+  border-radius: 2px;
+
+  &__item {
+    display: flex;
+    align-items: center;
+    &:not(:first-child) {
+      margin-top: 8px;
+    }
+  }
+  &__title {
+    color: $pink;
+    font-size: 36px;
+    line-height: 36px;
+    font-style: italic;
+    font-family: 'Cookie', cursive;
+    display: inline-block;
+    margin-right: 24px;
+  }
+  &__val {
+    font-size: 18px;
+    line-height: 30px;
+    border: none;
+    border-bottom: 1px solid #c1b0af;
+    background-color: transparent;
+    flex-grow: 1;
+  }
+}

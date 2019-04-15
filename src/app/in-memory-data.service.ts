@@ -29,21 +29,21 @@ export class InMemoryDataService implements InMemoryDbService {
     ];
 
     const catalogGroupsItems = [
-      { id: 1, name: 'Classic berry', image: 'assets/images/catalog-mousse.png', options: [{ title: "1kg", price: 200}, { title: "2kg", price: 300}] },
-      { id: 2, name: 'Classic Chocolate', image: 'assets/images/catalog-mousse.png', options: [{ title: "1kg", price: 180}, { title: "2kg", price: 300}] },
-      { id: 3, name: 'Classic orange', image: 'assets/images/catalog-mousse.png', options: [{ title: "1kg", price: 160}, { title: "2kg", price: 300}] },
-      { id: 4, name: 'Red velvet', image: 'assets/images/catalog-mousse.png', options: [{ title: "1kg", price: 150}, { title: "2kg", price: 300}] },
-      { id: 5, name: 'Angel cake', image: 'assets/images/catalog-mousse.png', options: [{ title: "1kg", price: 120}, { title: "2kg", price: 300}] },
-      { id: 6, name: 'Red velvet', image: 'assets/images/catalog-mousse.png', options: [{ title: "1kg", price: 130}, { title: "2kg", price: 300}] },
+      { id: 1, name: 'Classic berry', image: 'assets/images/catalog-mousse.png', options: [{ title: "1kg", price: 200}, { title: "8kg", price: 300}] },
+      { id: 2, name: 'Classic Chocolate', image: 'assets/images/catalog-mousse.png', options: [{ title: "2kg", price: 180}, { title: "2kg", price: 300}] },
+      { id: 3, name: 'Classic orange', image: 'assets/images/catalog-mousse.png', options: [{ title: "5kg", price: 160}, { title: "2kg", price: 300}] },
+      { id: 4, name: 'Red velvet', image: 'assets/images/catalog-mousse.png', options: [{ title: "6kg", price: 150}, { title: "2kg", price: 300}] },
+      { id: 5, name: 'Angel cake', image: 'assets/images/catalog-mousse.png', options: [{ title: "5kg", price: 120}, { title: "2kg", price: 300}] },
+      { id: 6, name: 'Red velvet', image: 'assets/images/catalog-mousse.png', options: [{ title: "4kg", price: 130}, { title: "2kg", price: 300}] },
       { id: 7, name: 'Three chocolate', image: 'assets/images/catalog-mousse.png', options: [{ title: "1kg", price: 175}, { title: "2kg", price: 300}] },
-      { id: 8, name: 'Classic vanilla', image: 'assets/images/catalog-mousse.png', options: [{ title: "1kg", price: 102}, { title: "2kg", price: 300}] },
+      { id: 8, name: 'Classic vanilla', image: 'assets/images/catalog-mousse.png', options: [{ title: "2kg", price: 102}, { title: "2kg", price: 300}] },
       { id: 9, name: 'Classic citrus', image: 'assets/images/catalog-mousse.png', options: [{ title: "1kg", price: 85}, { title: "2kg", price: 300}] },
-      { id: 10, name: 'Classic cheesecake', image: 'assets/images/catalog-mousse.png', options: [{ title: "1kg", price: 90}, { title: "2kg", price: 300}] },
-      { id: 11, name: 'White Lady Cake', image: 'assets/images/catalog-mousse.png', options: [{ title: "1kg", price: 100}, { title: "2kg", price: 300}] },
-      { id: 12, name: 'Almond cake', image: 'assets/images/catalog-mousse.png', options: [{ title: "2kg", price: 110}] }
+      { id: 10, name: 'Classic cheesecake', image: 'assets/images/catalog-mousse.png', options: [{ title: "2kg", price: 90}, { title: "2kg", price: 300}] },
+      { id: 11, name: 'White Lady Cake', image: 'assets/images/catalog-mousse.png', options: [{ title: "5kg", price: 100}, { title: "7kg", price: 300}] },
+      { id: 12, name: 'Almond cake', image: 'assets/images/catalog-mousse.png', options: [{ title: "8kg", price: 110}] }
     ];
 
-    const maxPrice = 200;
+    const maxPrice = 300;
 
     const minPrice = 50;
 
@@ -76,10 +76,5 @@ export class InMemoryDataService implements InMemoryDbService {
     ];
 
     return {mainNav, phoneNumber, sNetworkLinks, catalogGroups, cakeFillings, cakeSizes, cakeDecorating, maxPrice, minPrice};
-  }
-
-  genMaxPrice(): number {
-    console.log(Math.max(...catalogGroupsItems.map(item => item.options[item.options.length - 1].price)))
-    return maxPrice = Math.max(...catalogGroupsItems.map(item => item.options[item.options.length - 1].price))
   }
 }

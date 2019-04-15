@@ -2,8 +2,7 @@
   [class.catalog-items--list]="showListView"
   class="catalog-items">
   <div class="catalog-items__row">
-    <div *ngFor="let item of catalogGroupItems"
-         [class.hidden]="item.options[0].price < minPrice || item.options[0].price > maxPrice"
+    <div *ngFor="let item of catalogGroupItems; index as i"
           class="catalog-item">
         <div class="catalog-item__icons"></div>
         <div class="catalog-item__image">
@@ -15,12 +14,13 @@
         </div>
         <div class="catalog-item__desc">
           <div class="catalog-item__title">{{ item.name }}</div>
-          <div class="catalog-item__price">200$</div>
+          <div class="catalog-item__price">{{ item.options[0].price }}$</div>
         </div>
         <div class="catalog-item__actions">
           <div class="catalog-item__options">
-            <label *ngFor="let opt of item.options; first as isFirst">
-              <input type="radio" [checked]="isFirst" name="{{item.name}}" value="">
+            <label *ngFor="let opt of item.options; index as i; first as isFirst"
+                    class="border-input">
+              <input type="radio" [checked]="isFirst" name="{{item.id + '-' + item.name}}" [value]="opt.price">
               <span>{{ opt.title }}</span>
             </label>
           </div>

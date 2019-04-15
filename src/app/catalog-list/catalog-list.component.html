@@ -13,8 +13,11 @@
       <app-sidebar-banner></app-sidebar-banner>
     </div>
     <div class="catalog-category__content">
-      <app-catalog-view (changeCatalogView)="changeView($event)"></app-catalog-view>
+      <app-catalog-view
+          (changeCatalogView)="changeView($event)"
+          (changeCatalogSort)="changeSort($event)"></app-catalog-view>
       <app-catalog-items
+          [showListSort]="showListSort"
           [showListView]="showListView"
           [maxPrice]="maxPrice"
           [minPrice]="minPrice"></app-catalog-items>

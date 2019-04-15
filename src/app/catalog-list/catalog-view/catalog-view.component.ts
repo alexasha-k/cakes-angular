@@ -8,6 +8,7 @@ import { Component, OnInit, Output, EventEmitter } from '@angular/core';
 export class CatalogViewComponent implements OnInit {
 
   @Output() changeCatalogView = new EventEmitter<string>();
+  @Output() changeCatalogSort = new EventEmitter<string>();
 
   constructor() { }
 
@@ -24,6 +25,8 @@ export class CatalogViewComponent implements OnInit {
   sortType: string;
 
   setSortType(sort: string): void {
+    if (this.sortType === sort) return false;
+    this.changeCatalogSort.emit(sort)
     this.sortType = sort;
   }
 
