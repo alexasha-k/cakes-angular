@@ -45,7 +45,8 @@
                 nextButton: '.swiper-button-next',
                 prevButton: '.swiper-button-prev',
                 spaceBetween: 30,
-                slidesPerView: 4
+                slidesPerView: 4,
+                breakpoints: {'991': {slidesPerView: 2},'767': {slidesPerView: 1}}
               }">
 
               <div class="swiper-wrapper">
@@ -80,7 +81,8 @@
                 nextButton: '.swiper-button-next',
                 prevButton: '.swiper-button-prev',
                 spaceBetween: 40,
-                slidesPerView: 2
+                slidesPerView: 2,
+                breakpoints: {'767': {slidesPerView: 1}}
               }">
               <div class="swiper-wrapper">
                 <div class="swiper-slide" *ngFor="let cakeDecoratingItem of cakeDecorating; index as i">

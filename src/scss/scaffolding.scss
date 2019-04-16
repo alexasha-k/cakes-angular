@@ -41,11 +41,12 @@ img {
   text-transform: uppercase;
   font-size: 16px;
   line-height: 16px;
-  padding: 16px 65px;
+  padding: 16px;
   text-align: center;
   background-color: $pink;
   border: 1px solid $pink;
   border-radius: 25px;
+  min-width: 200px;
   cursor: pointer;
   transition: 150ms ease;
 
@@ -89,7 +90,7 @@ img {
 
 .bg.bg--red {
   background-color: $red;
-  padding: 110px 0 170px;
+  padding: 100px 0 150px;
   color: white;
   h2,h3,h4 {
     color: white;
@@ -159,6 +160,10 @@ img {
     line-height: 24px;
     background-color: transparent;
     margin-bottom: 40px;
+
+    &.ng-touched.ng-invalid {
+      border-color: $red;
+    }
   }
 }
 
@@ -176,5 +181,10 @@ img {
     padding-left: 0;
     padding-top: 30px;
     padding-bottom: 140px;
+  }
+
+  .btn {
+    font-size: 14px;
+    padding: 10px 16px;
   }
 }

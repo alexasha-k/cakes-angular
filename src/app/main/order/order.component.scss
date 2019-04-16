@@ -235,6 +235,19 @@
   .order {
     margin-bottom: 40px;
 
+    /deep/ .swiper-container {
+      padding-left: 5px;
+      padding-right: 5px;
+
+      &:before, &:after {
+        display: none;
+      }
+
+      .swiper-button-next, .swiper-button-prev {
+        background-color: rgba(255, 255, 255, 0.75);
+      }
+    }
+
     .order-step {
       margin-bottom: 20px;
       padding: 40px;
@@ -247,6 +260,7 @@
         top: 40px;
         left: 40px;
         font-size: 20px;
+        z-index: 2;
         &:before {
           font-size: 40px;
           line-height: 40px;
@@ -285,6 +299,13 @@
 }
 
 @media (max-width: 991px) {
+
+  .option-item {
+    &__image {
+      margin-left: auto;
+      margin-right: auto;
+    }
+  }
   .order-submit {
     &__row {
       align-items: center;
@@ -314,6 +335,7 @@
 
 @media (max-width: 767px) {
   .order {
+
     .order-step {
       margin-bottom: 10px;
       padding: 20px 20px 26px;
@@ -356,10 +378,6 @@
       width: 100%;
       &:not(:first-child) {
         display: none;
-      }
-      &__image {
-        margin-left: auto;
-        margin-right: auto;
       }
     }
 

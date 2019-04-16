@@ -5,24 +5,24 @@
     <div class="contacts__row">
       <div class="contacts__col">
         <p>Fill the form and we will contact us</p>
-        <form class="contacts-form" id="contacts-form" action="index.html" method="post">
+        <form class="contacts-form" [formGroup]="contactForm" (ngSubmit)="onSubmit()">
           <div class="form-field">
             <label>
-              <input class="text-field" type="text" name="" value="" placeholder="Your name">
+              <input class="text-field" required type="text" formControlName="name" placeholder="Your name">
             </label>
             <label>
-              <input class="text-field" type="text" name="" value="" placeholder="Email">
+              <input class="text-field" required type="email" formControlName="email" placeholder="Email">
             </label>
             <label>
-              <textarea class="text-field" placeholder="Your message" rows="1" cols="80"></textarea>
+              <textarea class="text-field" required formControlName="message" placeholder="Your message" rows="1" cols="80"></textarea>
             </label>
           </div>
-          <button class="btn" type="submit" name="#">Send</button>
+          <button class="btn" type="submit">Send</button>
         </form>
       </div>
       <div class="contacts__col">
-        <p>Or call us: +7 926 255 42 18</p>
-        <p>Or send us email: cakes@alexashaweb.com</p>
+        <p>Or call us: <a href="tel:+79262554218">+7 926 255 42 18</a></p>
+        <p>Or send us email: <a href="email:cakes@alexashaweb.com">cakes@alexashaweb.com</a></p>
         <p>Social networks:</p>
         <app-s-network></app-s-network>
       </div>
