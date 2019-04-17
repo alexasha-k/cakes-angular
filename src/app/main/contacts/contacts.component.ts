@@ -11,14 +11,17 @@ export class ContactsComponent implements OnInit {
   constructor(private fb: FormBuilder) { }
 
   contactForm = this.fb.group({
-    name: ['', Validators.required],
-    email: ['', Validators.required],
+    name: ['', [Validators.required, Validators.minLength(2)]],
+    email: ['', [Validators.required, Validators.email]],
     message: ['', Validators.required],
   })
 
   onSubmit() {
   // TODO: Use EventEmitter with form value
-    console.warn(this.contactForm.value);
+    console.log(this.contactForm);
+    if (this.contactForm.valid) {
+      console.warn(this.contactForm.value);
+    }
   }
 
   ngOnInit() {

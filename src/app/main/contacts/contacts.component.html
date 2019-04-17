@@ -16,8 +16,14 @@
             <label>
               <textarea class="text-field" required formControlName="message" placeholder="Your message" rows="1" cols="80"></textarea>
             </label>
+            <div
+                *ngIf="contactForm.invalid && (contactForm.dirty || contactForm.touched)"
+                class="validation-errors">
+                  Fill in all required fields.
+                  <div *ngIf="contactForm.controls.email.invalid">Your email is not valid</div>
+              </div>
           </div>
-          <button class="btn" type="submit">Send</button>
+          <button class="btn" type="submit" [disabled]="contactForm.invalid">Send</button>
         </form>
       </div>
       <div class="contacts__col">

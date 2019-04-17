@@ -117,14 +117,16 @@
                   <input type="text"
                          class="order-submit__desc"
                          disabled
-                         value="{{ cakeFillingsSelected }}">
+                         value="{{ cakeFillingsSelected }}"
+                         placeholder="Choose filling">
                 </div>
                 <div class="order-submit__item">
                   <div class="order-submit__title">Size</div>
                   <input type="text"
                          class="order-submit__desc"
                          disabled
-                         value="{{ cakeSizesSelected }}">
+                         value="{{ cakeSizesSelected }}"
+                         placeholder="Choose size">
                 </div>
                 <div class="order-submit__item">
                   <div class="order-submit__title">Decorating</div>
@@ -132,10 +134,16 @@
                          class="order-submit__desc"
                          name="cake-decorating"
                          disabled
-                         value="{{ cakeDecoratingSelected }}">
+                         value="{{ cakeDecoratingSelected }}"
+                         placeholder="Choose decorating">
                 </div>
                 <div class="order-submit__item">
-                  <div class="btn" type="" (click)="openDialog()" name="order-form-submit">Place order</div>
+                  <button
+                      class="btn"
+                      type="button"
+                      [disabled]="!cakeFillingsSelected || !cakeSizesSelected || !cakeDecoratingSelected"
+                      (click)="openDialog()"
+                      name="order-form-submit">Place order</button>
                 </div>
               </div>
             </div>

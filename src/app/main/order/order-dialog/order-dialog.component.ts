@@ -43,8 +43,10 @@ export class OrderDialogComponent implements OnInit {
   }
 
   onSubmit() {
-  // TODO: Use EventEmitter with form value
-    console.warn(this.orderForm.getRawValue());
+    // TODO: Use EventEmitter with form value
+    if (this.orderForm.valid) {
+      console.warn(this.orderForm.getRawValue());
+    }
   }
 
 }

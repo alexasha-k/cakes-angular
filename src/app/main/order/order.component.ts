@@ -16,6 +16,7 @@ export class OrderComponent implements OnInit {
     public dialog: MatDialog) { }
 
   openDialog(): void {
+    if (!this.cakeFillingsSelected || !this.cakeSizesSelected || !this.cakeDecoratingSelected) return
     const dialogRef = this.dialog.open(OrderDialogComponent, {
       width: '600px',
       data: {
@@ -23,11 +24,6 @@ export class OrderComponent implements OnInit {
         cakeSizesSelected: this.cakeSizesSelected,
         cakeDecoratingSelected: this.cakeDecoratingSelected
       }
-    });
-
-    dialogRef.afterClosed().subscribe(result => {
-      console.log('The dialog was closed');
-      this.animal = result;
     });
   }
 
@@ -58,9 +54,9 @@ export class OrderComponent implements OnInit {
       );
   }
 
-  cakeFillingsSelected: string = "Choose filling";
-  cakeSizesSelected: string = "Choose size";
-  cakeDecoratingSelected: string = "Choose decorating";
+  cakeFillingsSelected: string;
+  cakeSizesSelected: string;
+  cakeDecoratingSelected: string;
 
   setCakeFillings(cakeFillingsSelected): void {
     this.cakeFillingsSelected = cakeFillingsSelected.nameRus;

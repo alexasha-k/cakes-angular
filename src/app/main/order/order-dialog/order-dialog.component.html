@@ -43,7 +43,6 @@
         <textarea formControlName="message" class="text-field" cols="80" placeholder="Your message" rows="1"></textarea>
       </label>
     </div>
-    <button class="btn" type="submit">Submit</button>
+    <button class="btn" type="submit" [disabled]="orderForm.invalid">Submit</button>
   </form>
-
 </div>
