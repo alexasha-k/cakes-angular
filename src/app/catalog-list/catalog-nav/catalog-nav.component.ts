@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 
-import { MainNavService } from '../../main-nav.service';
+import { CatalogGroups, MainNavService } from '../../main-nav.service';
 
 @Component({
   selector: 'app-catalog-nav',
@@ -8,7 +8,7 @@ import { MainNavService } from '../../main-nav.service';
   styleUrls: ['./catalog-nav.component.scss']
 })
 export class CatalogNavComponent implements OnInit {
-  catalogGroups: СatalogGroups[];
+  catalogGroups: CatalogGroups[];
 
   constructor(
     private mainNavService: MainNavService
@@ -17,8 +17,7 @@ export class CatalogNavComponent implements OnInit {
   showCatalogGroups() {
     this.mainNavService.getCatalogGroups()
       .subscribe(
-        catalogGroups => this.catalogGroups = catalogGroups,
-        error => this.error = error
+        catalogGroups => this.catalogGroups = catalogGroups
       );
   }
 

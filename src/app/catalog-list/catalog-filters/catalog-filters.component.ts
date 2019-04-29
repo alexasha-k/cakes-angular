@@ -1,9 +1,5 @@
 import { Component, OnInit, Input, Output, EventEmitter } from '@angular/core';
-
-export interface MinMaxPrice {
-  maxPrice: number;
-  minPrice: number;
-}
+import { MinMaxPrice } from '../../main-nav.service';
 
 @Component({
   selector: 'app-catalog-filters',
@@ -19,7 +15,7 @@ export class CatalogFiltersComponent implements OnInit {
   @Output() changeMinMaxPrice = new EventEmitter<MinMaxPrice>();
 
   onModelChange(event): void {
-    let price = {};
+    let price: MinMaxPrice = { maxPrice: 0, minPrice: 0};
     price.maxPrice = this.maxPrice;
     price.minPrice = this.minPrice;
     this.changeMinMaxPrice.emit(price);

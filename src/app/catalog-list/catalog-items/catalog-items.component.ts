@@ -18,18 +18,16 @@ export class CatalogItemsComponent implements OnInit {
   @Input() maxPrice : number;
   @Input() minPrice : number;
 
-
   constructor(
     private route: ActivatedRoute,
     private mainNavService: MainNavService
   ) { }
 
-
-  catalogGroupItems : any;
+  catalogGroupItems: any;
 
   getCatalogGroupItems() {
     const category = +this.route.snapshot.paramMap.get('id');
-    this.mainNavService.getCatalogGroup(category)
+    this.mainNavService.getCatalogSubgroup(category)
       .pipe(
         map(({ items }) => items.filter(a => a.options[0].price > this.minPrice && a.options[0].price < this.maxPrice))
       )
@@ -38,7 +36,6 @@ export class CatalogItemsComponent implements OnInit {
 
   sortCatalogGroupItems(type) {
     if (!type) return false;
-    console.log(type);
     const category = +this.route.snapshot.paramMap.get('id');
     if (type == "Price") {
       this.mainNavService.getCatalogSubgroup(category)
@@ -70,5 +67,4 @@ export class CatalogItemsComponent implements OnInit {
       }
     }
   }
-
 }

@@ -2,7 +2,7 @@ import { Component, OnInit, Input, Output } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
 import { Location } from '@angular/common';
 
-import { MainNavService } from '../main-nav.service';
+import { CatalogGroups, CatalogGroupsItems, MainNavService } from '../main-nav.service';
 import { CatalogListService } from './catalog-list.service';
 
 import { Observable, from } from 'rxjs';
@@ -16,9 +16,8 @@ import { filter } from 'rxjs/operators';
 
 export class CatalogListComponent implements OnInit {
 
-  @Input() catalogGroup : СatalogGroups;
-  @Output() catalogGroup : СatalogGroups;
-  catalogGroups: СatalogGroups[];
+  @Input() catalogGroup : CatalogGroups;
+  catalogGroups: CatalogGroups[];
 
   constructor(
     private route: ActivatedRoute,
@@ -31,16 +30,14 @@ export class CatalogListComponent implements OnInit {
     const category = +this.route.snapshot.paramMap.get('id');
     this.mainNavService.getCatalogGroup(category)
       .subscribe(
-        catalogGroup => this.catalogGroup = catalogGroup,
-        error => this.error = error
+        catalogGroup => this.catalogGroup = catalogGroup
       );
   }
 
   showCatalogGroups() {
     this.mainNavService.getCatalogGroups()
       .subscribe(
-        catalogGroups => this.catalogGroups = catalogGroups,
-        error => this.error = error
+        catalogGroups => this.catalogGroups = catalogGroups
       );
   }
 

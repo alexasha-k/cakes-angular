@@ -1,6 +1,6 @@
 import { Component, OnInit, HostListener } from '@angular/core';
 
-import { MainNavService } from '../main-nav.service';
+import { MainNav, MainNavService } from '../main-nav.service';
 
 @Component({
   selector: 'app-header',
@@ -15,8 +15,7 @@ export class HeaderComponent implements OnInit {
   showMainNav() {
     this.mainNavService.getMainNav()
       .subscribe(
-        mainNavLinks => this.mainNavLinks = mainNavLinks,
-        error => this.error = error
+        mainNavLinks => this.mainNavLinks = mainNavLinks
       );
   }
 
@@ -24,8 +23,7 @@ export class HeaderComponent implements OnInit {
   showPhoneNumber() {
     this.mainNavService.getPhoneNumber()
       .subscribe(
-        phoneNumber => this.phoneNumber = phoneNumber,
-        error => this.error = error
+        phoneNumber => this.phoneNumber = phoneNumber
       );
   }
 

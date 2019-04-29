@@ -1,8 +1,6 @@
 import { InMemoryDbService } from 'angular-in-memory-web-api';
 import { Injectable } from '@angular/core';
 
-import { Config } from './main-nav-service';
-
 @Injectable({
   providedIn: 'root'
 })

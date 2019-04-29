@@ -1,4 +1,4 @@
-import { Component, OnInit, Inject, Input } from '@angular/core';
+import { Component, Inject, Input } from '@angular/core';
 import { FormBuilder, FormControl, FormGroup, Validators } from '@angular/forms';
 import {MatDialogRef, MAT_DIALOG_DATA} from '@angular/material';
 
@@ -13,7 +13,7 @@ export interface DialogData {
   templateUrl: './order-dialog.component.html',
   styleUrls: ['./order-dialog.component.scss']
 })
-export class OrderDialogComponent implements OnInit {
+export class OrderDialogComponent {
 
   constructor(
     public dialogRef: MatDialogRef<OrderDialogComponent>,
@@ -32,9 +32,9 @@ export class OrderDialogComponent implements OnInit {
     }),
     message: [''],
     orderDetails: this.fb.group({
-      cakeFillingsSelected: [{value: data.cakeFillingsSelected, disabled: true}, Validators.required],
-      cakeSizesSelected: [{value: data.cakeSizesSelected, disabled: true}, Validators.required],
-      cakeDecoratingSelected: [{value: data.cakeDecoratingSelected, disabled: true}, Validators.required],
+      cakeFillingsSelected: [{value: this.data.cakeFillingsSelected, disabled: true}, Validators.required],
+      cakeSizesSelected: [{value: this.data.cakeSizesSelected, disabled: true}, Validators.required],
+      cakeDecoratingSelected: [{value: this.data.cakeDecoratingSelected, disabled: true}, Validators.required],
     })
   });
 

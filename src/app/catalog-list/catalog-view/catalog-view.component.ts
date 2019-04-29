@@ -15,7 +15,7 @@ export class CatalogViewComponent implements OnInit {
   viewTypes = [ "Grid", "List"];
   viewType: string = "Grid";
 
-  setView(view: string = viewTypes[0]): void {
+  setView(view: string = this.viewTypes[0]): void | false {
     if (this.viewType === view) return false;
     this.changeCatalogView.emit(view)
     this.viewType = view;
@@ -24,13 +24,14 @@ export class CatalogViewComponent implements OnInit {
   sortTypes = [ "Price", "Size"];
   sortType: string;
 
-  setSortType(sort: string): void {
+  setSortType(sort: string): void | false {
     if (this.sortType === sort) return false;
     this.changeCatalogSort.emit(sort)
     this.sortType = sort;
   }
 
   ngOnInit() {
+
   }
 
 }

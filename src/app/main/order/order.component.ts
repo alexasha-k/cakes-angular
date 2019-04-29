@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import {MatDialog} from '@angular/material';
 
-import { MainNavService } from '../../main-nav.service';
+import { CakeDecorating, CakeFillings, CakeSizes, MainNavService } from '../../main-nav.service';
 import { OrderDialogComponent } from './order-dialog/order-dialog.component';
 
 @Component({
@@ -31,8 +31,7 @@ export class OrderComponent implements OnInit {
   showCakeFillings() {
     this.mainNavService.getCakeFillings()
       .subscribe(
-        cakeFillings => this.cakeFillings = cakeFillings,
-        error => this.error = error
+        cakeFillings => this.cakeFillings = cakeFillings
       );
   }
 
@@ -40,8 +39,7 @@ export class OrderComponent implements OnInit {
   showCakeSizes() {
     this.mainNavService.getCakeSizes()
       .subscribe(
-        cakeSizes => this.cakeSizes = cakeSizes,
-        error => this.error = error
+        cakeSizes => this.cakeSizes = cakeSizes
       );
   }
 
@@ -49,9 +47,7 @@ export class OrderComponent implements OnInit {
   showCakeDecorating() {
     this.mainNavService.getCakeDecorating()
       .subscribe(
-        cakeDecorating => this.cakeDecorating = cakeDecorating,
-        error => this.error = error
-      );
+        cakeDecorating => this.cakeDecorating = cakeDecorating);
   }
 
   cakeFillingsSelected: string;

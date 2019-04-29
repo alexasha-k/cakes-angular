@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 
-import { MainNavService } from '../main-nav.service';
+import { MainNav, MainNavService } from '../main-nav.service';
 
 @Component({
   selector: 'app-footer',
@@ -17,8 +17,7 @@ export class FooterComponent implements OnInit {
   showMainNav() {
     this.mainNavService.getMainNav()
       .subscribe(
-        mainNavLinks => this.mainNavLinks = mainNavLinks,
-        error => this.error = error
+        mainNavLinks => this.mainNavLinks = mainNavLinks
       );
   }
 

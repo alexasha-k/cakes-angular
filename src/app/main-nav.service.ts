@@ -10,9 +10,11 @@ export interface MainNav {
   showHeader: boolean;
 }
 
-export interface СatalogGroups {
+export interface CatalogGroups {
+  id: number,
   name: string;
   nameRus: string;
+  items: CatalogGroupsItems,
   groupImage: GroupImage;
   quantity: number;
 }
@@ -20,6 +22,13 @@ export interface СatalogGroups {
 export interface GroupImage {
   title: string;
   path: string;
+}
+
+export interface CatalogGroupsItems {
+  id: number,
+  name: string,
+  image: string,
+  options: any[]
 }
 
 export interface CakeFillings {
@@ -46,6 +55,11 @@ export interface CakeDecorating {
   priceUnit: string;
 }
 
+export interface MinMaxPrice {
+  maxPrice: number;
+  minPrice: number;
+}
+
 @Injectable({
   providedIn: 'root'
 })
@@ -65,13 +79,13 @@ export class MainNavService {
   }
 
   catalogGroupsUrl = 'api/catalogGroups';
-  getCatalogGroups(): Observable<СatalogGroups> {
-     return this.http.get<СatalogGroups>(this.catalogGroupsUrl);
+  getCatalogGroups(): Observable<CatalogGroups[]> {
+     return this.http.get<CatalogGroups[]>(this.catalogGroupsUrl);
   }
 
-  getCatalogGroup(id: number): Observable<СatalogGroups> {
+  getCatalogGroup(id: number): Observable<CatalogGroups> {
      const url = `${this.catalogGroupsUrl}/${id}`;
-     return this.http.get<СatalogGroups>(url);
+     return this.http.get<CatalogGroups>(url);
   }
 
   getCatalogSubgroup(id: number): Observable<any> {
@@ -80,18 +94,18 @@ export class MainNavService {
   }
 
   cakeFillingsURL = 'api/cakeFillings';
-  getCakeFillings(): Observable<CakeFillings> {
-     return this.http.get<CakeFillings>(this.cakeFillingsURL);
+  getCakeFillings(): Observable<CakeFillings[]> {
+     return this.http.get<CakeFillings[]>(this.cakeFillingsURL);
   }
 
   cakeSizesURL = 'api/cakeSizes';
-  getCakeSizes(): Observable<CakeSizes> {
-     return this.http.get<CakeSizes>(this.cakeSizesURL);
+  getCakeSizes(): Observable<CakeSizes[]> {
+     return this.http.get<CakeSizes[]>(this.cakeSizesURL);
   }
 
   cakeDecoratingURL = 'api/cakeDecorating';
-  getCakeDecorating(): Observable<CakeDecorating> {
-     return this.http.get<CakeDecorating>(this.cakeDecoratingURL);
+  getCakeDecorating(): Observable<CakeDecorating[]> {
+     return this.http.get<CakeDecorating[]>(this.cakeDecoratingURL);
   }
 
   maxPriceUrl = 'api/maxPrice';
