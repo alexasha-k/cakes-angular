@@ -17,6 +17,7 @@
           (changeCatalogView)="changeView($event)"
           (changeCatalogSort)="changeSort($event)"></app-catalog-view>
       <app-catalog-items
+          [id]="catalogGroup.id"
           [showListSort]="showListSort"
           [showListView]="showListView"
           [maxPrice]="maxPrice"

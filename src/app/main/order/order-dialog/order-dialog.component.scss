@@ -30,5 +30,20 @@
     border-bottom: 1px solid #c1b0af;
     background-color: transparent;
     flex-grow: 1;
+    max-width: 100%;
+  }
+}
+
+@media (max-width: 575px) {
+  .cdk-overlay-pane {
+    max-width: 100% !important;
+  }
+
+  .order-details {
+    margin-left: -10px;
+    margin-right: -10px;
+    &__item {
+      flex-wrap: wrap;
+    }
   }
 }

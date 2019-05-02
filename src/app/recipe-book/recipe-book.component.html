@@ -1,0 +1,37 @@
+<div class="container">
+  <h2>Simple recipes</h2>
+  <div class="subtitle">Yor can bake this wonderful cinnabon rolls for your guests!</div>
+  <div class="recipe">
+    <h3>Ingredients</h3>
+    <div class="recipe__block">
+      <table>
+        <thead>
+          <tr class="recipe__portions">
+            <td colspan="2"><span>You can count ingredients for desirable servings quantity,<br />
+              or recount ingredients depending on one ingredient quantity</span></td>
+            <td style="text-align: center;">Servings:<br />
+              <input type="text"
+              [ngModel]="portions | number: '1.0-1'"
+              (ngModelChange)="setPortion($event)"></td>
+          </tr>
+        </thead>
+        <tbody>
+          <tr *ngFor="let ingredient of recipeIngredients" class="recipe__item">
+            <td class="recipe__header">{{ ingredient.ingredientName | titlecase }}</td>
+            <td class="recipe__content">
+              <span class="quantity">{{ ingredient.ingredientQuantity }}</span>
+              <span class="unit">{{ ingredient.ingredientUnit }}</span>
+            </td>
+            <td class="recipe__new-quantity">
+              <input
+                type="text"
+                (ngModelChange)="setPortion($event, ingredient.ingredientQuantity)"
+                [ngModel]="ingredient.ingredientQuantity * portions | number: '1.0-1'"
+                >
+            </td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+</div>

@@ -1,0 +1,73 @@
+@import '../../scss/variables';
+.recipe {
+  &__block {
+    table {
+      border-collapse: collapse;
+    }
+    td {
+      padding: 7px 32px 7px 0;
+    }
+    thead {
+
+    }
+  }
+  &__item {
+    padding: 8px 0;
+  }
+  &__header {
+    font-weight: 600;
+    position: relative;
+
+    &::after {
+      content: '';
+      position: absolute;
+      display: block;
+      bottom: 0;
+      left: 0;
+      width: 0;
+      height: 2px;
+      background-color: $pink;
+      transition: 450ms ease;
+    }
+
+    &:hover {
+      &::after {
+        width: 100%;
+      }
+    }
+  }
+  &__content {
+    .quantity {
+
+    }
+    .unit {
+      font-size: 90%;
+    }
+  }
+  &__new-quantity {
+
+    input {
+      border: none;
+      border-bottom: 1px solid #c9bcbb;
+      font-size: 18px;
+      line-height: 24px;
+      background-color: transparent;
+      width: 100px;
+      text-align: center;
+    }
+  }
+  &__portions {
+    font-family: 'Cookie', cursive;
+    font-size: 28px;
+    line-height: 32px;
+    input {
+      border: none;
+      border-bottom: 2px solid $pink;
+      font-size: 24px;
+      line-height: 32px;
+      background-color: transparent;
+      width: 100px;
+      text-align: center;
+    }
+  }
+}

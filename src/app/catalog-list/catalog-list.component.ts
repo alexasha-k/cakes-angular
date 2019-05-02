@@ -1,12 +1,9 @@
-import { Component, OnInit, Input, Output } from '@angular/core';
-import { ActivatedRoute } from '@angular/router';
+import { Component, OnInit, Input, Output, OnChanges } from '@angular/core';
+import { ActivatedRoute, Router, NavigationEnd } from '@angular/router';
 import { Location } from '@angular/common';
 
 import { CatalogGroups, CatalogGroupsItems, MainNavService } from '../main-nav.service';
 import { CatalogListService } from './catalog-list.service';
-
-import { Observable, from } from 'rxjs';
-import { filter } from 'rxjs/operators';
 
 @Component({
   selector: 'app-catalog-list',
@@ -16,10 +13,11 @@ import { filter } from 'rxjs/operators';
 
 export class CatalogListComponent implements OnInit {
 
-  @Input() catalogGroup : CatalogGroups;
-  catalogGroups: CatalogGroups[];
+  @Input() catalogGroup: CatalogGroups;
+  //catalogGroups: CatalogGroups[];
 
   constructor(
+    private router: Router,
     private route: ActivatedRoute,
     private mainNavService: MainNavService,
     private location: Location,
@@ -34,12 +32,12 @@ export class CatalogListComponent implements OnInit {
       );
   }
 
-  showCatalogGroups() {
-    this.mainNavService.getCatalogGroups()
-      .subscribe(
-        catalogGroups => this.catalogGroups = catalogGroups
-      );
-  }
+  // showCatalogGroups() {
+  //   this.mainNavService.getCatalogGroups()
+  //     .subscribe(
+  //       catalogGroups => this.catalogGroups = catalogGroups
+  //     );
+  // }
 
   showListView: boolean = false;
   changeView(event) {
@@ -68,8 +66,17 @@ export class CatalogListComponent implements OnInit {
 
   ngOnInit(): void {
     this.getCatalogList();
-    this.showCatalogGroups();
+    //this.showCatalogGroups();
     this.showMaxPrice();
     this.showMinPrice();
+    this.router.events
+      .subscribe((event) => {
+        if (event instanceof NavigationEnd) {
+          this.getCatalogList();
+        }
+      });
   }
+
+
+
 }

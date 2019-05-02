@@ -35,6 +35,7 @@ import { CatalogFiltersComponent } from './catalog-list/catalog-filters/catalog-
 import { SidebarBannerComponent } from './common/sidebar-banner/sidebar-banner.component';
 import { CatalogViewComponent } from './catalog-list/catalog-view/catalog-view.component';
 import { CatalogItemsComponent } from './catalog-list/catalog-items/catalog-items.component';
+import { RecipeBookComponent } from './recipe-book/recipe-book.component';
 
 
 
@@ -62,7 +63,8 @@ import { CatalogItemsComponent } from './catalog-list/catalog-items/catalog-item
     CatalogFiltersComponent,
     SidebarBannerComponent,
     CatalogViewComponent,
-    CatalogItemsComponent
+    CatalogItemsComponent,
+    RecipeBookComponent
   ],
   imports: [
     MaterialModuleModule,
