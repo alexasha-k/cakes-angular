@@ -38,7 +38,6 @@ import { CatalogItemsComponent } from './catalog-list/catalog-items/catalog-item
 import { RecipeBookComponent } from './recipe-book/recipe-book.component';
 
 
-
 @NgModule({
   declarations: [
     AppComponent,

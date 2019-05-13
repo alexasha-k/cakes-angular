@@ -1,5 +1,6 @@
-import { Component, OnInit, Input, OnChanges, SimpleChange } from '@angular/core';
+import { Component, OnInit, Input, OnChanges, SimpleChange, HostBinding } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
+import { trigger, query, stagger, style, animate, transition } from '@angular/animations';
 
 import { Observable, from, of } from 'rxjs';
 import { filter, map } from 'rxjs/operators';
@@ -9,7 +10,19 @@ import { MainNavService } from '../../main-nav.service';
 @Component({
   selector: 'app-catalog-items',
   templateUrl: './catalog-items.component.html',
-  styleUrls: ['./catalog-items.component.scss']
+  styleUrls: ['./catalog-items.component.scss'],
+  animations: [
+    trigger('showMe', [
+      transition(':enter', [
+        style({opacity: 0}),
+        animate('0.5s', style({opacity: 1}))
+      ]),
+      transition(':leave', [
+        style({opacity: 1}),
+        animate('0.15s', style({opacity: 0}))
+      ])
+    ])
+  ]
 })
 export class CatalogItemsComponent implements OnInit {
 

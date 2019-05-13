@@ -1,3 +1,14 @@
+<div *ngIf="!catalogGroup" class="container" style="min-height: 100vh">
+  <h1 class="catalog-header" style="color: transparent">...</h1>
+  <div class="catalog-category">
+    <div class="catalog-category__sidebar">
+      <div class="catalog-category__sidebar__inner">
+      </div>
+    </div>
+    <div class="catalog-category__content">
+    </div>
+  </div>
+</div>
 <div *ngIf="catalogGroup" class="container">
   <h1 class="catalog-header">{{ catalogGroup.nameRus }}</h1>
   <div class="catalog-category">

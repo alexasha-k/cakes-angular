@@ -32,13 +32,6 @@ export class CatalogListComponent implements OnInit {
       );
   }
 
-  // showCatalogGroups() {
-  //   this.mainNavService.getCatalogGroups()
-  //     .subscribe(
-  //       catalogGroups => this.catalogGroups = catalogGroups
-  //     );
-  // }
-
   showListView: boolean = false;
   changeView(event) {
     this.showListView = (event === "List");
@@ -66,7 +59,6 @@ export class CatalogListComponent implements OnInit {
 
   ngOnInit(): void {
     this.getCatalogList();
-    //this.showCatalogGroups();
     this.showMaxPrice();
     this.showMinPrice();
     this.router.events

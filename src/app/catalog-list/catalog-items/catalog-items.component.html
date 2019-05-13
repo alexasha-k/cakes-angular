@@ -1,33 +1,72 @@
+<div *ngIf="!catalogGroupItems" class="catalog-items">
+  <style>
+    .start-loader {
+      height: 75vh;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+    .start-loader__icon {
+      animation-name: loader-animation;
+      animation-duration: 1000ms;
+      animation-iteration-count: infinite;
+      animation-timing-function: linear;
+    }
+    @keyframes loader-animation {
+      0% {
+        transform: rotate(0);
+      }
+      100% {
+        transform: rotate(360deg);
+      }
+    }
+  </style>
+  <div class="start-loader">
+    <div>
+      <svg width="100" class="start-loader__icon" height="100" viewBox="0 0 100 100">
+        <defs>
+          <linearGradient id="stroke-gradient">
+            <stop offset="0%" stop-color="#fbebea"/>
+            <stop offset="25%" stop-color="#fbebea"/>
+            <stop offset="100%" stop-color="#f50049"/>
+          </linearGradient>
+        </defs>
+        <circle cx="50" cy="50" r="42" fill="#fbebea" stroke="url(#stroke-gradient)" stroke-width="8"/>
+      </svg>
+    </div>
+  </div>
+</div>
 <div
+  *ngIf="catalogGroupItems"
   [class.catalog-items--list]="showListView"
   class="catalog-items">
   <div class="catalog-items__row">
-    <div *ngFor="let item of catalogGroupItems; index as i"
+    <div *ngFor="let item of catalogGroupItems" @showMe
           class="catalog-item">
-        <div class="catalog-item__icons"></div>
-        <div class="catalog-item__image">
-          <div class="catalog-carousel">
-            <div class="catalog-carousel__wrapper">
-              <img src="{{ item.image }}" alt="">
-            </div>
+      <div class="catalog-item__icons"></div>
+      <div class="catalog-item__image">
+        <div class="catalog-carousel">
+          <div class="catalog-carousel__wrapper">
+            <img src="{{ item.image }}" alt="">
           </div>
         </div>
-        <div class="catalog-item__desc">
-          <div class="catalog-item__title">{{ item.name }}</div>
-          <div class="catalog-item__price">{{ item.options[0].price }}$</div>
+      </div>
+      <div class="catalog-item__desc">
+        <div class="catalog-item__title">{{ item.name }}</div>
+        <div class="catalog-item__price">{{ item.options[0].price }}$</div>
+      </div>
+      <div class="catalog-item__actions">
+        <div class="catalog-item__options">
+          <label *ngFor="let opt of item.options; index as i; first as isFirst"
+                  class="border-input">
+            <input type="radio" [checked]="isFirst" name="{{item.id + '-' + item.name}}" [value]="opt.price">
+            <span>{{ opt.title }}</span>
+          </label>
         </div>
-        <div class="catalog-item__actions">
-          <div class="catalog-item__options">
-            <label *ngFor="let opt of item.options; index as i; first as isFirst"
-                    class="border-input">
-              <input type="radio" [checked]="isFirst" name="{{item.id + '-' + item.name}}" [value]="opt.price">
-              <span>{{ opt.title }}</span>
-            </label>
-          </div>
-          <div class="catalog-item__btns">
-            <button class="btn" type="button" name="button">Add to cart</button>
-          </div>
+        <div class="catalog-item__btns">
+          <button class="btn" type="button" name="button">Add to cart</button>
         </div>
+      </div>
     </div>
   </div>
 </div>
