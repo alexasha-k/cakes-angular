@@ -1,0 +1,48 @@
+@import '../../../scss/variables';
+
+.cart-icon {
+  position: fixed;
+  right: 0;
+  top: 50%;
+  background-color: $pink;
+  padding: 12px 60px 12px 12px;
+  border-radius: 4px 0 0 4px;
+  overflow: hidden;
+  &::before, &::after {
+    content: '';
+    display: block;
+    position: absolute;
+  }
+
+  &::before {
+    border: 2px solid $white;
+    width: 80px;
+    height: 80px;
+    border-radius: 50%;
+    top: -12px;
+    right: -24px;
+  }
+
+  &::after {
+    width: 1px;
+    height: 1px;
+    border-bottom: 40px solid #ffffff;
+    border-left: 40px solid transparent;
+    border-right: 40px solid transparent;
+    top: -10px;
+    border-top: 40px solid transparent;
+    right: -23px;
+    border-radius: 50%;
+    transform: rotate(19deg);
+  }
+
+  &.hidden {
+    display: none;
+  }
+
+  a {
+    color: $white;
+    text-align: center;
+    text-decoration: none;
+  }
+}

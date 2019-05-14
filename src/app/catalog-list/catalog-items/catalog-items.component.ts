@@ -10,19 +10,7 @@ import { MainNavService } from '../../main-nav.service';
 @Component({
   selector: 'app-catalog-items',
   templateUrl: './catalog-items.component.html',
-  styleUrls: ['./catalog-items.component.scss'],
-  animations: [
-    trigger('showMe', [
-      transition(':enter', [
-        style({opacity: 0}),
-        animate('0.5s', style({opacity: 1}))
-      ]),
-      transition(':leave', [
-        style({opacity: 1}),
-        animate('0.15s', style({opacity: 0}))
-      ])
-    ])
-  ]
+  styleUrls: ['./catalog-items.component.scss']
 })
 export class CatalogItemsComponent implements OnInit {
 

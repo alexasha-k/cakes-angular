@@ -1,0 +1,64 @@
+@import "../../../scss/variables";
+
+.catalog-item {
+  background-color: $white;
+  box-shadow: $pink-shadow;
+  padding: 20px;
+  display: flex;
+  flex-direction: column;
+
+  &.hidden {
+    display: none;
+  }
+
+
+  &__icons {
+    display: flex;
+    align-items: center;
+  }
+  &__image {
+    padding-top: 100%;
+    position: relative;
+
+    .catalog-carousel {
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+
+      &__wrapper {
+      }
+    }
+  }
+  &__desc {
+    text-align: center;
+  }
+  &__title {
+    font-size: 20px;
+    line-height: 30px;
+  }
+  &__price {
+    font-size: 22px;
+    line-height: 30px;
+    font-weight: 600;
+  }
+  &__actions {
+    margin-top: auto;
+    max-width: 250px;
+  }
+  &__options {
+    margin: 10px 0 16px;
+    text-align: center;
+  }
+  &__btns {
+    .btn {
+      display: block;
+      text-align: center;
+      width: 100%;
+    }
+  }
+}

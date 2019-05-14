@@ -26,7 +26,7 @@ export class RecipeBookComponent implements OnInit {
 
   portions: number = 1;
 
-  setPortion(evt, initialVal) {
+  setPortion(evt, initialVal?) {
     if (!initialVal) return this.portions = evt;
     this.portions = (evt / initialVal)
   }

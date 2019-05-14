@@ -1,0 +1,78 @@
+@import '../../../scss/variables';
+
+.cart-page {
+  display: grid;
+  grid-template-columns: 1fr 300px;
+  grid-column-gap: 36px;
+  margin-bottom: 80px;
+
+  &__cart, &__total {
+    background-color: $white;
+    box-shadow: $pink-shadow;
+    padding: 40px 20px;
+  }
+
+  &__total {
+    text-align: right;
+  }
+}
+
+.total-value {
+  font-size: 18px;
+  line-height: 30px;
+  border: none;
+  border-bottom: 1px solid #c1b0af;
+  background-color: transparent;
+
+  margin-bottom: 24px;
+}
+
+.cart-table {
+  margin-bottom: 48px;
+}
+
+.cart-item {
+  display: flex;
+  align-items: center;
+  padding: 12px 8px;
+  border-bottom: 2px solid $pink;
+
+  &__name {
+    flex-basis: 180px;
+    max-width: 180px;
+    font-weight: 600;
+    padding-right: 24px;
+  }
+  &__options {
+    flex-basis: 180px;
+    max-width: 180px;
+    opacity: 0.7;
+  }
+
+  &__quantity {
+    margin-left: auto;
+  }
+  &__price {
+    max-width: 120px;
+    flex-basis: 120px;
+    text-align: right;
+    padding-left: 36px;
+    font-weight: 600;
+    padding-right: 24px;
+  }
+  &__delete {
+    max-width: 36px;
+    flex-basis: 36px;
+    button {
+      vertical-align: middle;
+      cursor: pointer;
+      &:hover {
+        opacity: 0.6;
+      }
+    }
+    svg {
+      fill: $pink;
+      stroke: $pink;
+    }
+  }
+}

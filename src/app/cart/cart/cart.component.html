@@ -1,0 +1,46 @@
+<div class="container">
+  <h1>Your cart</h1>
+  <div class="cart-page">
+    <div class="cart-page__cart">
+      <form action="">
+        <div class="cart-table" *ngIf="cartItems">
+          <div class="cart-table__item cart-item cart-item--header">
+            <div class="cart-item__name">Cake</div>
+            <div class="cart-item__options">Options</div>
+            <div class="cart-item__quantity">Quantity</div>
+            <div class="cart-item__price">Price</div>
+            <div class="cart-item__delete"></div>
+          </div>
+          <div
+            *ngFor="let item of cartItems; index as i"
+            class="cart-table__item cart-item">
+            <div class="cart-item__name">{{ item.name }}</div>
+            <div class="cart-item__options">
+              <div *ngIf="item.options">
+                <div *ngFor="let opt of item.options">{{ opt }}</div>
+              </div>
+            </div>
+            <div class="cart-item__quantity">10</div>
+            <div class="cart-item__price">{{ item.price }}$</div>
+            <div class="cart-item__delete">
+              <button
+                (click)="deleteCartItem(i)"
+                class="no-style-btn"
+                type="button"
+                title="Delete item">
+                <svg width="24" height="24" viewBox="0 0 24 24"><path d="M23.954 21.03l-9.184-9.095 9.092-9.174-2.832-2.807-9.09 9.179-9.176-9.088-2.81 2.81 9.186 9.105-9.095 9.184 2.81 2.81 9.112-9.192 9.18 9.1z"/></svg>
+              </button>
+            </div>
+          </div>
+        </div>
+        <button class="btn" type="submit">Order</button>
+      </form>
+    </div>
+    <div class="cart-page__total">
+      <div class="subtitle">Total:</div>
+      <div class="total-value">{{ itemsTotalPrice | number: '1.0-2'}} $</div>
+      <div class="subtitle">Delivery:</div>
+      <div>from 50$</div>
+    </div>
+  </div>
+</div>

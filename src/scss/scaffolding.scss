@@ -72,6 +72,13 @@ img {
   }
 }
 
+.no-style-btn {
+  border: none;
+  box-shadow: none;
+  background-color: transparent;
+  background-image: none;
+}
+
 .visually-hidden {
   position: absolute;
   clip: rect(0 0 0 0);

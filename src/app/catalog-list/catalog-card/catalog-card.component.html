@@ -1,0 +1,32 @@
+<div @showMe
+      class="catalog-item">
+  <div class="catalog-item__icons"></div>
+  <div class="catalog-item__image">
+    <div class="catalog-carousel">
+      <div class="catalog-carousel__wrapper">
+        <img src="{{ item.image }}" alt="">
+      </div>
+    </div>
+  </div>
+  <div class="catalog-item__desc">
+    <div class="catalog-item__title">{{ item.name }}</div>
+    <div class="catalog-item__price">{{ item.options[selectedPriceId].price }}$</div>
+  </div>
+  <div class="catalog-item__actions">
+    <div class="catalog-item__options">
+      <label *ngFor="let opt of item.options; index as i; first as isFirst"
+              class="border-input">
+        <input
+          type="radio"
+          [checked]="i === selectedPriceId"
+          name="{{item.id + item.name}}"
+          (change)="changePrice($event)"
+          [value]="i">
+        <span>{{ opt.title }}</span>
+      </label>
+    </div>
+    <div class="catalog-item__btns">
+      <button (click)="addItemToCart(item, selectedPriceId)" class="btn" type="button" name="button">Add to cart</button>
+    </div>
+  </div>
+</div>
