@@ -34,12 +34,12 @@ export class CatalogCardComponent implements OnInit {
   }
 
   addItemToCart(item, opt?) {
-
+    const option = opt || 0;
     const itemToCart: CartItem = {
-      id: item.id,
+      id: `${item.id}-${option}`,
       name: item.name,
-      price: item.options[opt || 0].price,
-      options: [item.options[opt || 0].title]
+      price: item.options[option].price,
+      options: [item.options[option].title]
     }
     this.cartService.addToCart(itemToCart);
   }

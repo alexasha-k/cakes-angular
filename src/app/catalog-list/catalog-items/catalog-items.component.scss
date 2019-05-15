@@ -13,7 +13,7 @@
   .catalog-items__row {
     grid-template-columns: 1fr;
   }
-  .catalog-item {
+  /deep/ .catalog-item {
     flex-direction: row;
     align-items: center;
 

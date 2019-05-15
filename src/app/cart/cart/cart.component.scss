@@ -1,5 +1,9 @@
 @import '../../../scss/variables';
 
+.order-page {
+  margin-bottom: 80px;
+}
+
 .cart-page {
   display: grid;
   grid-template-columns: 1fr 300px;
@@ -51,6 +55,11 @@
 
   &__quantity {
     margin-left: auto;
+    input {
+      border: none;
+      text-align: right;
+      width: 60px;
+    }
   }
   &__price {
     max-width: 120px;

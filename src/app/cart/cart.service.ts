@@ -1,11 +1,13 @@
 import { Injectable } from '@angular/core';
-import { Subject } from 'rxjs';
+import { Subject, from } from 'rxjs';
+import { map, groupBy, mergeMap, reduce, pluck, mergeAll, count } from 'rxjs/operators';
 
 export interface CartItem {
-  id: number;
+  id: string;
   name: string;
   price: number;
   options?: any[];
+  quantity?: number;
 }
 
 @Injectable({
@@ -17,15 +19,43 @@ export class CartService {
 
   order: any[] = this.getCartData() || [];
   cartSubject : Subject<any> = new Subject();
+  orderList: any[] = [];
 
   addToCart(item: CartItem) {
-    this.order.push(item);
-    localStorage.setItem('cakeShopOrder', JSON.stringify(this.order));
-    this.cartSubject.next(this.order);
+    const cartItem = item;
+    if (this.order.filter(el => el.id === item.id).length) {
+      let ind;
+      this.order.filter((it, i) => {
+        if (it.id == item.id) {
+          return ind = i
+        }
+      });
+      cartItem.quantity = this.order[ind].quantity + 1
+      this.order[ind] = cartItem;
+      localStorage.setItem('cakeShopOrder', JSON.stringify(this.order));
+      this.cartSubject.next(this.order);
+    } else {
+      cartItem.quantity = 1;
+      this.order.push(cartItem);
+      localStorage.setItem('cakeShopOrder', JSON.stringify(this.order));
+      this.cartSubject.next(this.order);
+    }
   }
 
   removeFromCart(item) {
     this.order.splice(item, 1)
+    localStorage.setItem('cakeShopOrder', JSON.stringify(this.order));
+    this.cartSubject.next(this.order);
+  }
+
+  clearCart() {
+    localStorage.removeItem('cakeShopOrder');
+    this.cartSubject.next(this.order);
+  }
+
+  changeItemQuantity(val, item) {
+    const listItem = this.order[item];
+    listItem.quantity = val;
     localStorage.setItem('cakeShopOrder', JSON.stringify(this.order));
     this.cartSubject.next(this.order);
   }

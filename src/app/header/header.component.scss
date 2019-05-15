@@ -45,13 +45,16 @@
 }
 
 header.fixed {
-  position: fixed;
-  left: 0;
-  right: 0;
-  top: -30px;
-  background: $white;
-  box-shadow: $pink-shadow;
-  z-index: 10;
+  height: 100px;
+  & > div {
+    position: fixed;
+    left: 0;
+    right: 0;
+    top: -30px;
+    background: $white;
+    box-shadow: $pink-shadow;
+    z-index: 10;
+  }
 }
 
 @media (max-width: 1199px) {
@@ -70,6 +73,7 @@ header.fixed {
       padding-left: 0;
       display: block;
       text-align: center;
+      z-index: 10;
       li {
         border-bottom: 1px solid #dedede;
         border-top: 1px solid $pink-light;

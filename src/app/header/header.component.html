@@ -1,16 +1,18 @@
 <header (scroll)="onWindowScroll($event)" [class.fixed]="isStickHeader">
-  <div class="container">
-    <div class="header-wrapper">
-      <a href="/" class="logo">Cakes</a>
-      <ul class="main-nav"
-        [class.opened]="isMainNavOpened">
-        <div class="main-nav__toggle"
-          (click)="mainNavToggle()"></div>
-        <li *ngFor="let mainNavLink of mainNavLinks">
-          <a href="/index#{{ mainNavLink.alias }}">{{ mainNavLink.name }}</a>
-        </li>
-      </ul>
-      <a class="phone-number" href="#">{{ phoneNumber }}</a>
+  <div>
+    <div class="container">
+      <div class="header-wrapper">
+        <a href="/" class="logo">Cakes</a>
+        <ul class="main-nav"
+          [class.opened]="isMainNavOpened">
+          <div class="main-nav__toggle"
+            (click)="mainNavToggle()"></div>
+          <li *ngFor="let mainNavLink of mainNavLinks">
+            <a href="/index#{{ mainNavLink.alias }}">{{ mainNavLink.name }}</a>
+          </li>
+        </ul>
+        <a class="phone-number" href="#">{{ phoneNumber }}</a>
+      </div>
     </div>
   </div>
 </header>

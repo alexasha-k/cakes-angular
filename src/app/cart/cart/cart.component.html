@@ -1,9 +1,13 @@
 <div class="container">
   <h1>Your cart</h1>
-  <div class="cart-page">
+  <div *ngIf="!cartItems" style="margin-bottom: 60px; min-height: 45vh">
+    <div class="subtitle">Your cart is empty</div>
+    <p>You haven't ordered something else. Go to our <a routerLink="/catalog/1">Catalog</a> to choose something sweety!</p>
+  </div>
+  <div class="cart-page" *ngIf="cartItems">
     <div class="cart-page__cart">
       <form action="">
-        <div class="cart-table" *ngIf="cartItems">
+        <div class="cart-table">
           <div class="cart-table__item cart-item cart-item--header">
             <div class="cart-item__name">Cake</div>
             <div class="cart-item__options">Options</div>
@@ -20,8 +24,15 @@
                 <div *ngFor="let opt of item.options">{{ opt }}</div>
               </div>
             </div>
-            <div class="cart-item__quantity">10</div>
-            <div class="cart-item__price">{{ item.price }}$</div>
+            <div class="cart-item__quantity">
+              <input type="number" name=""
+              min="1"
+              max="10"
+              [attr.data-index]="i"
+              [value]="item.quantity"
+              (change)=setItemQuantity($event)>
+            </div>
+            <div class="cart-item__price">{{ item.price * item.quantity }}$</div>
             <div class="cart-item__delete">
               <button
                 (click)="deleteCartItem(i)"
@@ -33,7 +44,7 @@
             </div>
           </div>
         </div>
-        <button class="btn" type="submit">Order</button>
+        <button class="btn" type="button" *ngIf="!goToOrder" (click)="goToOrder = !goToOrder">Order</button>
       </form>
     </div>
     <div class="cart-page__total">
@@ -41,6 +52,47 @@
       <div class="total-value">{{ itemsTotalPrice | number: '1.0-2'}} $</div>
       <div class="subtitle">Delivery:</div>
       <div>from 50$</div>
+    </div>
+  </div>
+  <div class="order-page" *ngIf="goToOrder">
+    <div class="order-form" *ngIf="!orderSuccess">
+      <form [formGroup]="orderForm" (ngSubmit)="onSubmit()">
+        <div class="form-field">
+          <label>
+            <input formControlName="cake" value="Hello" type="hidden">
+          </label>
+          <label>
+            <input required formControlName="name" class="text-field" placeholder="Your name" type="text">
+          </label>
+          <label>
+            <input required formControlName="phone" class="text-field" placeholder="Phone number" type="tel">
+          </label>
+        </div>
+        <div formGroupName="address" class="form-field">
+          <label>
+            <input required formControlName="street" class="text-field" placeholder="Street" type="text">
+          </label>
+          <label>
+            <input required formControlName="city" class="text-field" placeholder="City" type="text">
+          </label>
+          <label>
+            <input required formControlName="state" class="text-field" placeholder="State" type="text">
+          </label>
+          <label>
+            <input required formControlName="zip" class="text-field" placeholder="Post code" type="text">
+          </label>
+        </div>
+        <div class="form-field">
+          <label>
+            <textarea formControlName="message" class="text-field" cols="80" placeholder="Your message" rows="1"></textarea>
+          </label>
+        </div>
+        <button class="btn" type="submit" [disabled]="orderForm.invalid">Submit</button>
+      </form>
+    </div>
+    <div class="order-success" *ngIf="orderSuccess">
+      <div class="subtitle">Thank you for your order!</div>
+      <p>We will call you to confirm your order during the next two hours, or next day since 8am if you order after 8pm.</p>
     </div>
   </div>
 </div>
