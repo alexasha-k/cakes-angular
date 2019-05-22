@@ -37,6 +37,7 @@ import { RecipeBookComponent } from './recipe-book/recipe-book.component';
 import { CatalogCardComponent } from './catalog-list/catalog-card/catalog-card.component';
 import { CartIconComponent } from './cart/cart-icon/cart-icon.component';
 import { CartComponent } from './cart/cart/cart.component';
+import { ScrollPositionDirective } from './scroll-position.directive';
 
 
 @NgModule({
@@ -65,7 +66,8 @@ import { CartComponent } from './cart/cart/cart.component';
     RecipeBookComponent,
     CatalogCardComponent,
     CartIconComponent,
-    CartComponent
+    CartComponent,
+    ScrollPositionDirective
   ],
   imports: [
     MaterialModuleModule,

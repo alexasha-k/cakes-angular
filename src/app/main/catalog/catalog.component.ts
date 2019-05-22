@@ -23,5 +23,4 @@ export class CatalogComponent implements OnInit {
   ngOnInit() {
     this.showCatalogGroups();
   }
-
 }

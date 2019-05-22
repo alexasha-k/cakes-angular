@@ -9,6 +9,10 @@
     padding-right: 70px;
   }
 
+  /deep/ swiper {
+    max-width: 100%;
+  }
+
   .order-step {
     background-color: $white;
     box-shadow: 0 10px 13px 0 rgba(163,6,60,0.05);

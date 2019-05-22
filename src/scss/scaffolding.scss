@@ -98,6 +98,7 @@ img {
   padding: 0 15px;
   margin-left: auto;
   margin-right: auto;
+  width: 100%;
 }
 
 .bg.bg--red {
@@ -207,4 +208,29 @@ img {
     font-size: 14px;
     padding: 10px 16px;
   }
+}
+
+[appScrollPosition] h2 {
+  transform: translate(0, -16px);
+  transition-duration: 500ms;
+  transition-delay: 250ms;
+}
+[appScrollPosition] .subtitle {
+  transform: translate(0, 16px);
+  transition-duration: 500ms;
+  transition-delay: 250ms;
+}
+
+[appScrollPosition] > section {
+  opacity: 0;
+  transition: 1000ms;
+}
+.scroll-animation-visible > section {
+  opacity: 1;
+}
+.scroll-animation-visible h2 {
+  transform: translate(0, 0);
+}
+.scroll-animation-visible .subtitle {
+  transform: translate(0, 0);
 }

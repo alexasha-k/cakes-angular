@@ -1,23 +1,28 @@
 <div class="main-banner">
   <div class="container">
-    <h1>
-      {{ title }}
-    </h1>
-    <div class="subtitle">
-      {{ subtitle }}
-    </div>
-    <a href="/index#main-page-order" class="btn">Choose cake</a>
-    <div class="main-banner__advantages banner-advantages">
-      <div class="banner-advantages__row">
-        <div class="banner-advantages__item">
-          <div class="banner-advantages__icon banner-advantages__icon--eco"></div>
-          <div class="banner-advantages__desc">Natural <br>ingredients</div>
+    <div @bannerAnimation class="main-banner__row">
+      <div class="main-banner__wrapper">
+        <h1>
+          {{ title }}
+        </h1>
+        <div class="subtitle">
+          {{ subtitle }}
         </div>
-        <div class="banner-advantages__item">
-          <div class="banner-advantages__icon banner-advantages__icon--gift"></div>
-          <div class="banner-advantages__desc">Free city delivery <br>above 150$</div>
+        <a href="/index#main-page-order" class="btn">Choose cake</a>
+        <div class="main-banner__advantages banner-advantages">
+          <div class="banner-advantages__row">
+            <div class="banner-advantages__item">
+              <div class="banner-advantages__icon banner-advantages__icon--eco"></div>
+              <div class="banner-advantages__desc">Natural <br>ingredients</div>
+            </div>
+            <div class="banner-advantages__item">
+              <div class="banner-advantages__icon banner-advantages__icon--gift"></div>
+              <div class="banner-advantages__desc">Free city delivery <br>above 150$</div>
+            </div>
+          </div>
         </div>
       </div>
+      <img class="main-banner__img" src="/assets/images/banner-img.png" alt="Order cakes">
     </div>
   </div>
 </div>

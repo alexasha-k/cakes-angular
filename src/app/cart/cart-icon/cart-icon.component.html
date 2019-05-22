@@ -1,4 +1,4 @@
-<div class="cart-icon" routerLinkActive="hidden" *ngIf="itemsCount">
+<div @slideRight class="cart-icon" routerLinkActive="hidden" *ngIf="itemsCount">
   <a routerLink="/cart">
     <div>Your cart:</div>
     <div class="cart-icon__count">{{itemsCount}} cakes</div>

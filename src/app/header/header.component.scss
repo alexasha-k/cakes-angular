@@ -64,40 +64,49 @@ header.fixed {
   .header-wrapper {
     position: relative;
     padding-top: 0;
-    .main-nav {
-      position: absolute;
-      top: 100%;
-      left: -15px;
-      right: -15px;
+  }
+  .main-nav {
+    position: absolute;
+    top: 100%;
+    left: -15px;
+    right: -15px;
+    padding-left: 0;
+    display: block;
+    text-align: center;
+    z-index: 10;
+    li {
+      border-bottom: 1px solid #dedede;
+      border-top: 1px solid $pink-light;
       background-color: #e7e7e7;
-      padding-left: 0;
-      display: block;
-      text-align: center;
-      z-index: 10;
-      li {
-        border-bottom: 1px solid #dedede;
-        border-top: 1px solid $pink-light;
-        padding: 10px;
-        transition: 200ms ease;
-        display: none;
-        &:first-child {
-          border-top: none;
-        }
-        &:last-child {
-          border-bottom: none;
-        }
-        &:hover {
-          background-color: $pink-light;
-          a {
-            color: $pink;
-          }
+      padding: 10px;
+      transition: 200ms ease;
+      &:first-child {
+        border-top: none;
+      }
+      &:last-child {
+        border-bottom: none;
+      }
+      &:hover {
+        background-color: $pink-light;
+        a {
+          color: $pink;
         }
       }
-      &__toggle {
-        display: block;
+    }
+    &__toggle {
+      display: block;
+      position: absolute;
+      top: -46px;
+      left: 120px;
+      width: 30px;
+      height: 30px;
+      color: $black;
+      cursor: pointer;
+
+      .burger-menu {
         position: absolute;
-        top: -32px;
-        left: 120px;
+        left: 0;
+        top: 15px;
         width: 30px;
         height: 2px;
         color: $black;
@@ -121,30 +130,38 @@ header.fixed {
         &::after {
           bottom: -8px;
         }
-
-        &:hover, &:active, &:focus {
-          color: $pink;
-        }
       }
-      &.opened {
-        .main-nav__toggle {
-          background-color: transparent;
-          &::before {
-            transform: rotate(45deg) translate(-3px, 0px);
-          }
-          &::after {
-            bottom: -8px;
-            transform: rotate(-45deg) translate(-5px, 0px);
-          }
+
+
+      &:hover, &:active, &:focus {
+        color: $pink;
+      }
+    }
+    &.opened {
+      .main-nav__toggle {
+        background-color: transparent;
+        &::before {
+          transform: rotate(45deg) translate(-3px, 0px);
         }
-        li {
-          display: block;
+        &::after {
+          bottom: -8px;
+          transform: rotate(-45deg) translate(-5px, 0px);
         }
       }
     }
   }
 
   header.fixed {
-    top: -3px;
+    & > div {
+      top: -3px;
+    }
+  }
+}
+
+@media (max-width: 767px) {
+  .main-nav {
+    &__toggle {
+      left: 102px;
+    }
   }
 }
