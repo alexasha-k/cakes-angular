@@ -10,7 +10,7 @@
   }
 
   /deep/ swiper {
-    max-width: 100%;
+    width: 100%;
   }
 
   .order-step {
@@ -39,6 +39,7 @@
 
         .order-step__selected {
           opacity: 1;
+          transform: scale(1);
 
           /deep/ .mat-icon {
             width: 50px;
@@ -51,9 +52,12 @@
     &__selected {
       position: absolute;
       color: $pink;
-      top: -10px;
-      left: -10px;
+      top: 0;
+      left: 0;
       opacity: 0;
+      transform-origin: center;
+      transform: scale(0);
+      transition: 350ms ease;
     }
 
     &__name {
@@ -129,6 +133,8 @@
     position: relative;
     width: fit-content;
     margin-bottom: 10px;
+    margin-left: auto;
+    margin-right: auto;
     label {
       cursor: pointer;
     }
@@ -175,6 +181,7 @@
   justify-content: space-between;
   box-shadow: $pink-shadow;
   padding: 30px 20px;
+  border-radius: 4px;
 
   .option-card {
     &__image {
@@ -201,6 +208,9 @@
       line-height: 30px;
       font-weight: bold;
     }
+  }
+  &:hover {
+    outline: 2px solid $pink-light;
   }
 }
 
@@ -304,12 +314,6 @@
 
 @media (max-width: 991px) {
 
-  .option-item {
-    &__image {
-      margin-left: auto;
-      margin-right: auto;
-    }
-  }
   .order-submit {
     &__row {
       align-items: center;

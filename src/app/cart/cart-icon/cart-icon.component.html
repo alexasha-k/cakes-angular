@@ -1,7 +1,7 @@
 <div @slideRight class="cart-icon" routerLinkActive="hidden" *ngIf="itemsCount">
   <a routerLink="/cart">
     <div>Your cart:</div>
-    <div class="cart-icon__count">{{itemsCount}} cakes</div>
+    <div class="cart-icon__count">{{itemsCount | i18nPlural: countMapping}}</div>
     <div class="cart-icon__total">Total: {{itemsTotalPrice | number: '1.0-2'}}$</div>
   </a>
 </div>

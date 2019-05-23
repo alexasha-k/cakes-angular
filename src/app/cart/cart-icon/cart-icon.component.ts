@@ -27,6 +27,7 @@ export class CartIconComponent implements OnInit {
 
   itemsCount: number;
   itemsTotalPrice: number;
+  countMapping: {[k: string]: string} = {'=1': '# cake', 'other': '# cakes'};
 
   showCartDetails() {
     const cartItems = this.cartService.getCartData();

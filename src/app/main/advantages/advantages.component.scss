@@ -1,3 +1,9 @@
 .advantages {
   margin-bottom: 60px;
 }
+
+@media (max-width: 767px) {
+  .advantages {
+    margin-bottom: 18px;
+  }
+}

@@ -24,10 +24,11 @@
     padding-top: 40%;
     background-color: $white;
     box-shadow: 0 10px 13px 0 rgba(163,6,60,0.05);
-
-
+    transition: 150ms ease-in-out;
+    transform-origin: center;
     &:hover {
-      opacity: 0.9;
+      transform: scale(1.02);
+      box-shadow: 0 12px 12px 0 rgba(163,6,60,0.25);
     }
   }
 

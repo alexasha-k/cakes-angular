@@ -64,7 +64,8 @@ export class HeaderComponent implements OnInit {
   isStickHeader: boolean = false;
   @HostListener('window:scroll', ['$event'])
   onWindowScroll($event) {
-    if (window.scrollY > 103) {
+    const topPadding = (window.innerWidth < 1200) ? 63 : 103;
+    if (window.scrollY > topPadding) {
       this.isStickHeader = true;
     } else {
       this.isStickHeader = false;

@@ -17,6 +17,28 @@
     width: auto;
     position: absolute;
     right: -150px;
+    animation-name: slide-from-right;
+    animation-duration: 1s;
+    animation-iteration-count: 1;
+    animation-fill-mode: forwards;
+    animation-delay: 300ms;
+    transform: translate(100%, 0)
+  }
+  @keyframes slide-from-right {
+    from {
+      transform: translate(100%, 0)
+    }
+    to {
+      transform: translate(0, 0)
+    }
+  }
+  @keyframes slide-from-top {
+    from {
+      transform: translate(0, -100%)
+    }
+    to {
+      transform: translate(0, calc(-100% + 40px))
+    }
   }
   h1 {
     max-width: 370px;
@@ -70,6 +92,7 @@
       width: 100%;
       height: auto;
       max-height: 1000px;
+      animation-name: slide-from-top;
     }
     h1, .subtitle {
       text-align: center;

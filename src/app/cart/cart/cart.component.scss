@@ -85,3 +85,41 @@
     }
   }
 }
+
+@media (max-width: 991px) {
+  .cart-page {
+    grid-template-columns: 1fr 200px;
+  }
+}
+
+@media (max-width: 767px) {
+  .cart-page {
+    display: block;
+    margin-bottom: 32px;
+    font-size: 13px;
+    &__cart {
+      margin-bottom: 24px;
+    }
+    &__total {
+      text-align: left;
+    }
+    &__cart, &__total {
+      padding: 20px 12px;
+    }
+  }
+}
+
+@media (max-width: 420px) {
+  .cart-item {
+    &__name {
+      padding-right: 16px;
+    }
+    &__price {
+      padding-right: 16px;
+      padding-left: 16px;
+    }
+    &--header {
+      display: none;
+    }
+  }
+}

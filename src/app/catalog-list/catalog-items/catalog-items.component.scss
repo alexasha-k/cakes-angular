@@ -45,7 +45,7 @@
 
   .catalog-items--list {
 
-    .catalog-item {
+    /deep/ .catalog-item {
       &__desc {
         width: 220px;
       }
@@ -61,8 +61,7 @@
   }
 
   .catalog-items--list {
-
-    .catalog-item {
+    /deep/ .catalog-item {
       &__image {
         display: none;
       }

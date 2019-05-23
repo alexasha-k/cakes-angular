@@ -71,3 +71,34 @@
     }
   }
 }
+
+@media (max-width: 575px) {
+  .recipe {
+    &__block {
+      td {
+        padding: 7px 12px 7px 0;
+      }
+    }
+    &__portions {
+      display: flex;
+      flex-wrap: wrap;
+    }
+    &__item {
+      display: flex;
+      align-items: center;
+      justify-content: flex-start;
+      flex-wrap: wrap;
+    }
+    &__header {
+      width: 50%;
+      flex-basis: 50%;
+    }
+    &__new-quantity {
+      width: 100%;
+      input {
+        width: 100%;
+        text-align: left;
+      }
+    }
+  }
+}

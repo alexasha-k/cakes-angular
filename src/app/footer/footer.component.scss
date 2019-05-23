@@ -1,35 +1,7 @@
 @import "../../scss/variables.scss";
 
-
 .footer {
   background-color: #e8e8e8;
-
-  .footer-nav {
-    margin: 0;
-    padding: 0;
-    display: flex;
-    align-items: center;
-
-    li {
-      list-style: none;
-      padding: 0;
-    }
-
-    a {
-      font-size: 18px;
-      line-height: 24px;
-      font-weight: normal;
-      color: $black;
-      text-decoration: none;
-      display: block;
-      padding: 0 22px;
-      font-weight: bold;
-
-      &:hover {
-        color: $pink;
-      }
-    }
-  }
 
   &__row {
     display: flex;
@@ -45,6 +17,43 @@
   }
 }
 
+.footer-nav {
+  margin: 0;
+  padding: 0;
+  display: flex;
+  align-items: center;
+
+  li {
+    list-style: none;
+    padding: 0;
+  }
+
+  a {
+    font-size: 18px;
+    line-height: 24px;
+    font-weight: normal;
+    color: $black;
+    text-decoration: none;
+    display: block;
+    padding: 0 22px;
+    font-weight: bold;
+
+    &:hover {
+      color: $pink;
+    }
+  }
+}
+
+@media (max-width: 991px) {
+  .footer-nav {
+    align-items: flex-start;
+    flex-direction: column;
+    li a {
+      padding: 0 0 12px;
+    }
+  }
+}
+
 @media (max-width: 767px) {
   .footer {
     &__row {
@@ -53,13 +62,7 @@
       padding: 30px 0;
     }
     .footer-nav {
-      align-items: flex-start;
-      flex-direction: column;
       margin-bottom: 25px;
-
-      li a {
-        padding: 0 0 12px;
-      }
     }
   }
 }

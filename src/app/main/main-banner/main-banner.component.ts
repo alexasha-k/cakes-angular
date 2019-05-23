@@ -18,9 +18,6 @@ import { trigger, query, stagger, group, state, style, animate, transition } fro
         query('.btn', [
           style({opacity: 0}),
         ]),
-        query('.main-banner__img', [
-          style({transform: 'translate(100%, 0)'}),
-        ]),
         query('.banner-advantages', style({opacity: 0, transform: 'translate(0,60px)'})),
 
         query('h1', [
@@ -31,9 +28,6 @@ import { trigger, query, stagger, group, state, style, animate, transition } fro
         ]),
         query('.btn', [
           animate('300ms ease', style({opacity: 1}))
-        ]),
-        query('.main-banner__img', [
-          animate('1s ease', style({transform: 'none'}))
         ]),
         query('.banner-advantages', [
           animate('500ms ease', style({opacity: 1, transform: 'none'}))

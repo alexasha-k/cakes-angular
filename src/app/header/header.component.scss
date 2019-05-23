@@ -109,7 +109,6 @@ header.fixed {
         top: 15px;
         width: 30px;
         height: 2px;
-        color: $black;
         background-color: currentColor;
 
         &::before, &::after {
@@ -139,19 +138,23 @@ header.fixed {
     }
     &.opened {
       .main-nav__toggle {
-        background-color: transparent;
-        &::before {
-          transform: rotate(45deg) translate(-3px, 0px);
-        }
-        &::after {
-          bottom: -8px;
-          transform: rotate(-45deg) translate(-5px, 0px);
+        color: $pink;
+        .burger-menu {
+          background-color: transparent;
+          &::before {
+            transform: rotate(45deg) translate(-3px, 0px);
+          }
+          &::after {
+            bottom: -8px;
+            transform: rotate(-45deg) translate(-5px, 0px);
+          }
         }
       }
     }
   }
 
   header.fixed {
+    height: 63px;
     & > div {
       top: -3px;
     }

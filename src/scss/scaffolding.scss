@@ -195,15 +195,17 @@ img {
   }
 }
 
-@media (max-width: 767px) {
+@media (max-width: 991px) {
   .bg.bg--image-left {
     background-position: center bottom;
     background-size: contain;
     padding-left: 0;
     padding-top: 30px;
-    padding-bottom: 140px;
+    padding-bottom: 40%;
   }
+}
 
+@media (max-width: 767px) {
   .btn {
     font-size: 14px;
     padding: 10px 16px;
