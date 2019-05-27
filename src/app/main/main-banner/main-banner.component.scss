@@ -34,10 +34,10 @@
   }
   @keyframes slide-from-top {
     from {
-      transform: translate(0, -100%)
+      transform: translate(0, -200%)
     }
     to {
-      transform: translate(0, calc(-100% + 40px))
+      transform: translate(0, -100%)
     }
   }
   h1 {
@@ -88,7 +88,7 @@
     &__img {
       top: 0;
       right: 0;
-      transform: translate(0, calc(-100% + 40px));
+      transform: translate(0, -200%);
       width: 100%;
       height: auto;
       max-height: 1000px;
@@ -128,9 +128,6 @@
     padding-top: 120px;
     &__row {
       min-height: 380px;
-    }
-    &__img {
-      transform: translate(0, -100%);
     }
     .subtitle {
       margin-bottom: 40px;

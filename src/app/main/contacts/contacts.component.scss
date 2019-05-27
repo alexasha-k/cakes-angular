@@ -32,10 +32,13 @@
     &__col {
       flex-basis: 100%;
       padding-right: 0;
+      &:not(:last-child) {
+        margin-bottom: 32px;
+      }
     }
     .form-field {
       & + .btn {
-        margin-top: 20px;
+        margin-top: 0;
       }
     }
   }

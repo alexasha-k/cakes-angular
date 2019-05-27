@@ -16,7 +16,7 @@ export class ScrollPositionDirective {
       const componentPosition = elem.offsetTop
       const scrollPosition = window.pageYOffset;
       const windowHeight = window.innerHeight;
-      if (scrollPosition >= componentPosition - windowHeight/2) {
+      if (scrollPosition >= componentPosition - windowHeight/1.5) {
         elem.classList.add('scroll-animation-visible')
       } else if (scrollPosition <= componentPosition - windowHeight - 200) {
         if (elem.classList.contains('scroll-animation-visible')) {elem.classList.remove('scroll-animation-visible')}

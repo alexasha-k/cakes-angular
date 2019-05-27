@@ -4,11 +4,9 @@
   <meta charset="utf-8">
   <title>Cakes</title>
   <base href="/">
-
+  <meta http-equiv="Cache-Control" content="public, max-age=2592000" />
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <link rel="icon" type="image/x-icon" href="favicon.ico">
   <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
-  <link href="https://cdnjs.cloudflare.com/ajax/libs/Swiper/3.4.2/css/swiper.min.css" rel="stylesheet">
 </head>
 <body>
   <app-root>
@@ -22,6 +20,7 @@
         right: 0;
         z-index: 100;
         display: flex;
+        flex-direction: column;
         align-items: center;
         justify-content: center;
       }
@@ -41,6 +40,7 @@
       }
     </style>
     <div class="start-loader">
+      <noscript>Please, enable Javascript in your browser.</noscript>
       <div>
         <svg width="100" class="start-loader__icon" height="100" viewBox="0 0 100 100">
           <defs>
@@ -55,6 +55,5 @@
       </div>
     </div>
   </app-root>
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/Swiper/3.4.2/js/swiper.js"></script>
 </body>
 </html>
