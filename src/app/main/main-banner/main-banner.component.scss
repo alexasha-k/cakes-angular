@@ -22,7 +22,12 @@
     animation-iteration-count: 1;
     animation-fill-mode: forwards;
     animation-delay: 300ms;
-    transform: translate(100%, 0)
+    transform: translate(100%, 0);
+    display: flex;
+    img {
+      object-fit: contain;
+      object-position: right;
+    }
   }
   @keyframes slide-from-right {
     from {
@@ -93,6 +98,7 @@
       height: auto;
       max-height: 1000px;
       animation-name: slide-from-top;
+      display: block;
     }
     h1, .subtitle {
       text-align: center;

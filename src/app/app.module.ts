@@ -39,6 +39,7 @@ import { CartIconComponent } from './cart/cart-icon/cart-icon.component';
 import { CartComponent } from './cart/cart/cart.component';
 import { ScrollPositionDirective } from './scroll-position.directive';
 import { LazyLoadImageDirective } from './lazy-load-image.directive';
+import { LazyLoadBackgroundDirective } from './lazy-load-background.directive';
 
 
 @NgModule({
@@ -69,7 +70,8 @@ import { LazyLoadImageDirective } from './lazy-load-image.directive';
     CartIconComponent,
     CartComponent,
     ScrollPositionDirective,
-    LazyLoadImageDirective
+    LazyLoadImageDirective,
+    LazyLoadBackgroundDirective
   ],
   imports: [
     MaterialModuleModule,
